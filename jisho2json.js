@@ -1,6 +1,10 @@
 
 /* Unfortunately there are few unique classes and no ids, which makes targeting specific info rather unwieldy and brittle. Ff any of the classes or structure changes this will have to be adjusted manually. */
 
+// FIXME: skip wikipedia entry, currently added to EN array
+// FIXME: sentences smooshes together multiples if more than 1 example sentence
+// TODO: example sentences tied to their parent definition
+
 console.log('jisho2json ready');
 
 function parseKana(el) {
