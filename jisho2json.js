@@ -41,7 +41,6 @@ function parseSentence(el) {
 
 function parseInfo(el) {
   var text = $(el).find('.supplemental_info .sense-tag').text();
-  text = text.replace(/usually written using /i, '');
   return text.length ? ' (' + text + ')' : '';
 }
 
