@@ -5,8 +5,7 @@ A simple chrome extension to copy a clicked Jisho entry as stringified JSON.
 Copies to the clipboard for easy pasting into Anki or a file with your notes.
 
 ### Clickable targets outlined
-![targets](targets.jpg)
-
+![targets](djtb.github.com/jisho2json/img/targets.jpg)
 #### Sample output
 ```json
 {
