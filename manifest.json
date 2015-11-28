@@ -1,0 +1,19 @@
+{
+  "name": "Jisho 2 JSON",
+  "description": "This extension will copy a clicked Jisho entry to the clipboard as stringified JSON",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "persistent": false,
+    "page": "background.html"
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "content_scripts": [{
+    "matches": ["http://jisho.org/*/*"],
+    "js": ["jquery-2.1.4.min.js","jisho2json.js"]
+  }]
+}
