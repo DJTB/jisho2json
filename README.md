@@ -4,6 +4,8 @@ A simple chrome extension to copy a clicked [Jisho.org](http://jisho.org) entry 
 
 Copies to the clipboard for easy pasting into Anki or a file with your notes.
 
+Visit [chrome://extensions](chrome://extensions) and "Load Unpacked Extension" to enable. Only runs on jisho.org domain.
+
 #### Sample output
 ```json
 {
