@@ -4,10 +4,6 @@ A simple chrome extension to copy a clicked [Jisho.org](http://jisho.org) entry 
 
 Copies to the clipboard for easy pasting into Anki or a file with your notes.
 
-### Clickable targets outlined
-
-![targets](http://djtb.github.io/jisho2json/img/targets.png)
-
 #### Sample output
 ```json
 {
@@ -21,3 +17,5 @@ Copies to the clipboard for easy pasting into Anki or a file with your notes.
   ]
 }
 ```
+### Clickable target zones outlined in orange (in image only)
+![targets](http://djtb.github.io/jisho2json/img/targets.png)
