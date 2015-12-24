@@ -5,8 +5,6 @@
 // FIXME: sentences smooshes together multiples if more than 1 example sentence
 // TODO: example sentences tied to their parent definition
 
-console.log('jisho2json ready');
-
 function parseKana(el) {
   return (el.find('.f-dropdown li:nth-of-type(2)').text().match(/(?!\b)\W+$/) || [])[0];
 }
@@ -17,39 +15,48 @@ function parseKanji(el) {
 
 function parseMeanings(el) {
   var defs = [];
-  var defNodes = el.find('.meaning-wrapper');
-
-  defNodes.each(function(_, el) {
+  var defNodes = el.find('.meaning-wrapper').not('.meaning-tags:contains("Wikipedia") + .meaning-wrapper');
+  console.log('defNodes', defNodes)
+  defNodes.each(function(i, el) {
     // only numbered meanings have this class followed by meaning text
     var text = $(el).find('.meaning-definition-section_divider + span').text().trim();
 
-    if (text.length) defs.push(text + parseInfo(el));
+    if (text.length) {
+      defs.push(text + parseInfo(el));
+    }
   });
 
-  return defs.length < 2 ? defs[0] : defs;
+  return defs;
 }
 
 function parseTags(el) {
-  return el.find('.meaning-tags:first').text().split(', ');
+  return el.find('.meaning-tags:first').text().split(', ').map(function(x) { return x.trim(); });
 }
 
-// FIXME: currently grabs parts of ALL example sentences. This should be called for each meaning, to see if the meaning has a sentence, and the sentence should be added to that specific meaning.
-function parseSentence(el) {
-  var s = el.find('.sentence');
-  var ja = s.find('.unlinked').text();
-  var en = s.find('.english').text();
+function parseSentences(el) {
+  var sentences = [];
+  el.find('.sentence').each(function(i, s) {
+    s = $(s);
+    sentences.push({
+      "JA": s.find('.unlinked').text(),
+      "EN": s.find('.english').text()
+    });
+  })
 
-  return ja.length && {JA: ja, EN: en};
+  return sentences.length && sentences;
 }
 
 function parseInfo(el) {
-  var text = $(el).find('.supplemental_info .sense-tag').text();
-  return text.length ? ' (' + text + ')' : '';
+  var text = [];
+  $(el).find('.supplemental_info .sense-tag').each(function(i, el) {
+    return text.push($(el).text());
+  });
+  return text.length ? ' (' + text.join(', ') + ')' : '';
 }
 
 function buildJRE($entry) {
   // FIXME: sentence should be part of EN/meanings
-  var sentence = parseSentence($entry),
+  var sentences = parseSentences($entry),
       kana = parseKana($entry),
       ja = parseKanji($entry);
 
@@ -60,7 +67,7 @@ function buildJRE($entry) {
     EN: parseMeanings($entry)
   };
 
-  if (!!sentence) Object.assign(jre, {Sentence: sentence});
+  if (!!sentences) Object.assign(jre, {Sentences: sentences});
 
   return jre;
 }
@@ -75,3 +82,4 @@ $('body').on('click', '.concept_light', function() {
   sendText(JSON.stringify(o));
 });
 
+console.log('jisho2json loaded');
