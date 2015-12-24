@@ -12,6 +12,7 @@ function parseKanji(el) {
 function parseMeanings(el) {
   var defs = [];
   var defNodes = el.find('.meaning-wrapper').not('.meaning-tags:contains("Wikipedia") + .meaning-wrapper');
+
   defNodes.each(function(i, el) {
     // only numbered meanings have this class followed by meaning text
     var text = $(el).find('.meaning-definition-section_divider + span').text().trim();
@@ -51,17 +52,30 @@ function parseInfo(el) {
 
 function buildJRE($entry) {
   var sentences = parseSentences($entry),
+      tags = parseTags($entry),
       kana = parseKana($entry),
-      ja = parseKanji($entry);
+      ja = parseKanji($entry),
+      en = parseMeanings($entry);
 
+  // this is the format copied to clipboard
   var jre = {
-    Tags: parseTags($entry),
+    Tags: tags,
     JA: ja,
-    Kana: kana || ja,
-    EN: parseMeanings($entry)
+    Kana: kana || null,
+    EN: en,
+    Sentences: sentences
   };
 
+  // if there are sentences, add them to the jre object otherwise 'sentences' doesn't exist as a property
+  // (rather than being a property with an empty)
   if (!!sentences) Object.assign(jre, {Sentences: sentences});
+
+    /*
+    // Alternatively you could do something like
+       var jre = ja + (kana ? ' [' + kana + ']' : '') + ' - ' + en[0] + '\n';
+    // which would output a text string (ending with a new line) :
+    // '賞金 [しょうきん] - prize; monetary award'
+    */
 
   return jre;
 }
