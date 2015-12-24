@@ -1,9 +1,5 @@
 
-/* Unfortunately there are few unique classes and no ids, which makes targeting specific info rather unwieldy and brittle. Ff any of the classes or structure changes this will have to be adjusted manually. */
-
-// FIXME: skip wikipedia entry, currently added to EN array
-// FIXME: sentences smooshes together multiples if more than 1 example sentence
-// TODO: example sentences tied to their parent definition
+/* Unfortunately there are few unique classes and no ids, which makes targeting specific info rather unwieldy and brittle. If any of the classes or structure changes this will have to be adjusted manually. */
 
 function parseKana(el) {
   return (el.find('.f-dropdown li:nth-of-type(2)').text().match(/(?!\b)\W+$/) || [])[0];
@@ -16,7 +12,6 @@ function parseKanji(el) {
 function parseMeanings(el) {
   var defs = [];
   var defNodes = el.find('.meaning-wrapper').not('.meaning-tags:contains("Wikipedia") + .meaning-wrapper');
-  console.log('defNodes', defNodes)
   defNodes.each(function(i, el) {
     // only numbered meanings have this class followed by meaning text
     var text = $(el).find('.meaning-definition-section_divider + span').text().trim();
@@ -55,7 +50,6 @@ function parseInfo(el) {
 }
 
 function buildJRE($entry) {
-  // FIXME: sentence should be part of EN/meanings
   var sentences = parseSentences($entry),
       kana = parseKana($entry),
       ja = parseKanji($entry);
