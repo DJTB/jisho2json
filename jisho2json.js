@@ -66,10 +66,6 @@ function buildJRE($entry) {
     Sentences: sentences
   };
 
-  // if there are sentences, add them to the jre object otherwise 'sentences' doesn't exist as a property
-  // (rather than being a property with an empty)
-  if (!!sentences) Object.assign(jre, {Sentences: sentences});
-
     /*
     // Alternatively you could do something like
        var jre = ja + (kana ? ' [' + kana + ']' : '') + ' - ' + en[0] + '\n';
