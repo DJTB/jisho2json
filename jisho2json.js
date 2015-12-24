@@ -30,8 +30,7 @@ function parseMeanings(el) {
 }
 
 function parseTags(el) {
-  var tags = el.find('.meaning-tags:first').text().split(', ');
-  return tags.length < 2 ? tags[0] : tags;
+  return el.find('.meaning-tags:first').text().split(', ');
 }
 
 // FIXME: currently grabs parts of ALL example sentences. This should be called for each meaning, to see if the meaning has a sentence, and the sentence should be added to that specific meaning.
@@ -75,3 +74,4 @@ $('body').on('click', '.concept_light', function() {
   console.log('The following has been copied to the clipboard:\n', o);
   sendText(JSON.stringify(o));
 });
+
