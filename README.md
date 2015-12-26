@@ -34,5 +34,5 @@ Visit [chrome://extensions](chrome://extensions) and "Load Unpacked Extension" t
 }
 
 ```
-### Clickable target zones outlined in orange (in image only)
+### These are the clickable target zones on Jisho.org
 ![targets](http://djtb.github.io/jisho2json/img/targets.png)
