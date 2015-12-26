@@ -2,9 +2,11 @@
 
 A simple chrome extension to copy a clicked [Jisho.org](http://jisho.org) entry as stringified JSON. 
 
-Copies to the clipboard for easy pasting into your wordlist. I'll be working on a simple conversion script soon to import a wordlist in this format as Anki flashcards.
+Copies to the clipboard for easy pasting into your wordlist. 
 
 Copy all these files into a folder, then visit [chrome://extensions](chrome://extensions) in the address bar of your Chrome browser. Choose "Load Unpacked Extension" and select the folder. The extension is only active on jisho.org domain.
+
+Next up, I'll be working on a simple conversion script to import a wordlist following this format as Anki flashcards.
 
 #### Sample output
 ```json
