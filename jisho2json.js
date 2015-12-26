@@ -1,4 +1,3 @@
-
 /* Unfortunately there are few unique classes and no ids, which makes targeting specific info rather unwieldy and brittle. If any of the classes or structure changes this will have to be adjusted manually. */
 
 function parseKana(el) {
@@ -32,10 +31,9 @@ function parseTags(el) {
 function parseSentences(el) {
   var sentences = [];
   el.find('.sentence').each(function(i, s) {
-    s = $(s);
     sentences.push({
-      "JA": s.find('.unlinked').text(),
-      "EN": s.find('.english').text()
+      "JA": $(s).find('.unlinked').text(),
+      "EN": $(s).find('.english').text()
     });
   })
 
