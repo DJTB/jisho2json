@@ -36,8 +36,7 @@ function parseSentences(el) {
       "EN": $(s).find('.english').text()
     });
   })
-
-  return sentences.length && sentences;
+  return sentences;
 }
 
 function parseInfo(el) {
