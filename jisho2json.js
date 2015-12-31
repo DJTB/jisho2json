@@ -94,6 +94,9 @@ function hoverOff() {
 
 $entries.hover(hoverOn, hoverOff);
 
+// TODO: append a stylish looking box top right that fades in showing what was copied, and fades out again.
+// box says when jisho2json is ready too
+
 $('body').on('click', '.concept_light', function() {
   var o = buildJRE($(this));
   window.alert('The following entry has been copied to the clipboard:\n\n' + JSON.stringify(o) + '\n\n');
