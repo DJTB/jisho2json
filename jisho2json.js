@@ -77,9 +77,26 @@ function sendText(text) {
   chrome.extension.sendMessage({ text: text });
 }
 
+var $entries = $('.concept_light');
+
+function hoverOn() {
+  $(this).css({
+    boxShadow: '0 0 4px 0 tomato',
+    cursor: 'pointer'
+  });
+}
+
+function hoverOff() {
+ $(this).css({
+    boxShadow: 'none'
+  });
+}
+
+$entries.hover(hoverOn, hoverOff);
+
 $('body').on('click', '.concept_light', function() {
   var o = buildJRE($(this));
-  console.log('The following has been copied to the clipboard:\n', o);
+  window.alert('The following entry has been copied to the clipboard:\n\n' + JSON.stringify(o) + '\n\n');
   sendText(JSON.stringify(o));
 });
 
