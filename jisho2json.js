@@ -99,7 +99,6 @@ $entries.hover(hoverOn, hoverOff);
 
 $('body').on('click', '.concept_light', function() {
   var o = buildJRE($(this));
-  window.alert('The following entry has been copied to the clipboard:\n\n' + JSON.stringify(o) + '\n\n');
   console.log('Copied:\n', o);
   sendText(JSON.stringify(o));
 });
