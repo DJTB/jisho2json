@@ -58,7 +58,7 @@ function buildJRE($entry) {
   var jre = {
     Tags: tags,
     JA: ja,
-    Kana: kana || null,
+    Kana: kana || ja,
     EN: en,
     Sentences: sentences
   };
