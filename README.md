@@ -8,44 +8,61 @@ Copy all these files into a folder, then visit [chrome://extensions](chrome://ex
 
 Future plans to include a word-list formatted like this to be accepted as new vocab items for review on [Kaniwani](http://github.com/tadgh/KW).
 
-#### Sample output
+#### Sample output for jissai entry containing 3 main definitions
 ```json
 {
-  "Tags": [
-    "No-adjective", 
-    "Adverb", 
-    "Noun"
-  ],
-  "JA": "実際",
-  "Kana": "じっさい",
-  "EN": [
-    "practicality; practical", 
-    "reality; actuality; actual conditions", 
-    "bhutakoti (limit of reality) (Buddhist term)"
-  ],
-  "Sentences": [
+  "common": true,
+  "jlpt": "JLPT N3",
+  "ja": {
+    "characters": "実際",
+    "readings": "じっさい"
+  },
+  "en": [
     {
-      "JA": "原則として客車に駐車場がなくてはならないが実際にはあり得ない",
-      "EN": "In principle, there should be a parking place for every car. In practice, this is not true."
-    }, 
+      "meanings": [
+        "practicality",
+        "practical"
+      ],
+      "notes": [],
+      "tags": [
+        "No-adjective",
+        "Adverb",
+        "Noun"
+      ],
+      "sentences": [
+        {
+          "ja": "原則として客車に駐車場がなくてはならないが実際にはあり得ない",
+          "en": "In principle, there should be a parking place for every car. In practice, this is not true."
+        }
+      ]
+    },
     {
-      "JA": "きのうのことのように思えるけど私たちが初めて会ってから実際には年近くになるんですね",
-      "EN": "It seems like yesterday, but it's actually nearly ten years since we first met."
+      "meanings": [
+        "reality",
+        "actuality",
+        "actual conditions"
+      ],
+      "notes": [],
+      "tags": [],
+      "sentences": [
+        {
+          "ja": "きのうのことのように思えるけど私たちが初めて会ってから実際には年近くになるんですね",
+          "en": "It seems like yesterday, but it's actually nearly ten years since we first met."
+        }
+      ]
+    },
+    {
+      "meanings": [
+        "bhutakoti (limit of reality)"
+      ],
+      "notes": [
+        "Buddhist term"
+      ],
+      "tags": [],
+      "sentences": []
     }
   ]
 }
-```
-
-#### Alternative output.
-Edit the following variable in `jisho2json.js` to define the output you prefer. For example, remove Sentences, change JA to Kanji, and EN to Meanings.
-```javascript
-var jre = {
-  Tags: tags,
-  JA: ja,
-  Kana: kana || null,
-  EN: en,
-  Sentences: sentences
-};
 ```
 
 ### These are the clickable target zones on Jisho.org
