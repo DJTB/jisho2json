@@ -2,11 +2,9 @@
 
 A simple chrome extension to copy a clicked [Jisho.org](http://jisho.org) entry as stringified JSON. 
 
-Copies to the clipboard for easy pasting into your wordlist. 
-
 Copy all these files into a folder, then visit [chrome://extensions](chrome://extensions) in the address bar of your Chrome browser. Choose "Load Unpacked Extension" and select the folder. The extension is only active on jisho.org domain.
 
-Future plans to include a word-list formatted like this to be accepted as new vocab items for review on [Kaniwani](http://github.com/tadgh/KW).
+Future plans to expose an endpoint for wordlists in this format (or single entries) to be accepted as new vocab items for review on [Kaniwani](http://github.com/tadgh/KW).
 
 #### Sample output for jissai entry containing 3 main definitions
 ```json
