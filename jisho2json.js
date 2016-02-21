@@ -13,19 +13,27 @@ function parseMeanings(el) {
   var defNodes = el.find('.meaning-wrapper').not('.meaning-tags:contains("Wikipedia") + .meaning-wrapper');
 
   defNodes.each(function(i, el) {
+    var tags = parseTags(el);
+
     // only numbered meanings have this class followed by meaning text
     var text = $(el).find('.meaning-definition-section_divider + span').text().trim();
 
     if (text.length) {
-      defs.push(text + parseInfo(el));
+      defs.push({
+        meanings: text.split('; '),
+        notes: parseInfo(el),
+        tags: tags,
+      });
     }
   });
 
   return defs;
 }
 
+// returns array -> ['Noun', 'Suru Verb']
 function parseTags(el) {
-  return el.find('.meaning-tags:first').text().split(', ').map(function(x) { return x.trim(); });
+  var tags = $(el).prev('.meaning-tags').text();
+  return (/Wiki|Other/gi.test(tags) || tags === '') ? [] : tags.split(', ').map(function(x) { return x.trim(); });
 }
 
 function parseSentences(el) {
@@ -44,19 +52,17 @@ function parseInfo(el) {
   $(el).find('.supplemental_info .sense-tag').each(function(i, el) {
     return text.push($(el).text());
   });
-  return text.length ? ' (' + text.join(', ') + ')' : '';
+  return text;
 }
 
 function buildJRE($entry) {
   var sentences = parseSentences($entry),
-      tags = parseTags($entry),
       kana = parseKana($entry),
       ja = parseKanji($entry),
       en = parseMeanings($entry);
 
   // this is the format copied to clipboard
   var jre = {
-    Tags: tags,
     JA: ja,
     Kana: kana || ja,
     EN: en,
@@ -94,12 +100,13 @@ function hoverOff() {
 
 $entries.hover(hoverOn, hoverOff);
 
-// TODO: append a stylish looking box top right that fades in showing what was copied, and fades out again.
+// TODO: append a stylish toastr top right that fades in showing what was copied, and fades out again.
 // box says when jisho2json is ready too
 
 $('body').on('click', '.concept_light', function() {
   var o = buildJRE($(this));
   console.log('Copied:\n', o);
+  console.log(JSON.stringify(o.EN));
   sendText(JSON.stringify(o));
 });
 
