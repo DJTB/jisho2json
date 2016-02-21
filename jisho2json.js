@@ -18,11 +18,14 @@ function parseMeanings(el) {
     // only numbered meanings have this class followed by meaning text
     var text = $(el).find('.meaning-definition-section_divider + span').text().trim();
 
+    // TODO: $(el).next('sentences') add as well linked to meaning
+
     if (text.length) {
       defs.push({
         meanings: text.split('; '),
         notes: parseInfo(el),
         tags: tags,
+        sentences: parseSentences(el),
       });
     }
   });
@@ -37,44 +40,32 @@ function parseTags(el) {
 }
 
 function parseSentences(el) {
-  var sentences = [];
-  el.find('.sentence').each(function(i, s) {
-    sentences.push({
-      "JA": $(s).find('.unlinked').text(),
-      "EN": $(s).find('.english').text()
-    });
-  })
-  return sentences;
+  return $.map($(el).find('.sentence'), function(x) {
+    return {
+      "JA": $(x).find('.unlinked').text(),
+      "EN": $(x).find('.english').text()
+    };
+  });
 }
 
 function parseInfo(el) {
-  var text = [];
-  $(el).find('.supplemental_info .sense-tag').each(function(i, el) {
-    return text.push($(el).text());
+  return $.map($(el).find('.supplemental_info .tag-tag'), function(x) {
+    return $(x).text().trim();
   });
-  return text;
 }
 
 function buildJRE($entry) {
-  var sentences = parseSentences($entry),
-      kana = parseKana($entry),
+  var kana = parseKana($entry),
       ja = parseKanji($entry),
       en = parseMeanings($entry);
 
-  // this is the format copied to clipboard
   var jre = {
-    JA: ja,
-    Kana: kana || ja,
+    JA: {
+      characters: ja,
+      kana: kana || ja,
+    },
     EN: en,
-    Sentences: sentences
   };
-
-    /*
-    // Alternatively you could do something like
-       var jre = ja + (kana ? ' [' + kana + ']' : '') + ' - ' + en[0] + '\n';
-    // which would output a text string (ending with a new line) :
-    // '賞金 [しょうきん] - prize; monetary award'
-    */
 
   return jre;
 }
@@ -106,7 +97,7 @@ $entries.hover(hoverOn, hoverOff);
 $('body').on('click', '.concept_light', function() {
   var o = buildJRE($(this));
   console.log('Copied:\n', o);
-  console.log(JSON.stringify(o.EN));
+  console.log('Tags: \n', JSON.stringify(o.EN));
   sendText(JSON.stringify(o));
 });
 
