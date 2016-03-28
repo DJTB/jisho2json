@@ -66,12 +66,13 @@ function parseInfo(el) {
 }
 
 function buildJRE($entry) {
+  let characters = parseKanji($entry);
   return JSON.stringify({
     common: !!$entry.find('.concept_light-common').length,
     jlpt: $entry.find('.concept_light-tag:contains("JLPT")').text() || null,
     ja: {
       characters: parseKanji($entry),
-      readings: parseKana($entry) || ja, // sometimes no kana if characters were hiragana to begin with
+      readings: parseKana($entry) || characters, // sometimes no kana if characters were hiragana to begin with
     },
     en: parseMeanings($entry),
   });
