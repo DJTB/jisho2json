@@ -6,27 +6,28 @@
 ready(init);
 
 function init() {
-  console.log('jisho2json loaded');
+  console.info('jisho2json loaded');
 
   renderToast()
     .then((toast) => {
-      fadeIn(toast);
-      setTimeout(() => fadeOut(toast), 2000);
+      let pendingFade;
+      // allow user to dismiss toast
+      toast.addEventListener('click', () => fadeOut(toast));
 
-      // highlight clickable entries on hover
-      document.querySelectorAll('.concept_light').forEach((el) => {
-        el.addEventListener('mouseenter', addHighlight);
-        el.addEventListener('mouseout', removeHighlight);
-      });
+      // highlight clickable entries
+      $('.concept_light').hover(addHighlight, removeHighlight);
 
       // parse and copy entry to clipboard
-      $('body').on('click', '.concept_light', () => {
+      $('body').on('click', '.concept_light', function onEntryClick() {
         const obj = buildJRE($(this));
-        sendText(obj); // obj must be JSON
-        toast.textContent = JSON.stringify(obj); // eslint-disable-line no-param-reassign
-        fadeIn(toast);
-        setTimeout(() => fadeOut(toast), 2500);
+        sendText(obj); // stringified JSON
         console.info('Copied:\n', (obj));
+        toast.textContent = obj; // eslint-disable-line no-param-reassign
+
+        // animate and hold onto fadeout timer reference to allow reset
+        fadeIn(toast, 0.95);
+        clearTimeout(pendingFade);
+        pendingFade = setTimeout(() => fadeOut(toast), 5000);
       });
     })
     .catch(console.error);
@@ -34,23 +35,29 @@ function init() {
 
 function renderToast() {
   return new Promise((resolve, reject) => {
-    const toast = document.createElement('div');
+    const toast = document.createElement('pre');
     Object.assign(toast, {
       id: 'toast',
       textContent: 'jisho2json loaded',
     });
     Object.assign(toast.style, {
-      position: 'absolute',
-      top: '0px',
-      right: '0px',
+      position: 'fixed',
+      top: '.5rem',
+      right: '.5rem',
       padding: '2rem',
+      maxWidth: 'calc(100vw - 1rem)',
+      fontSize: '1.2rem',
       opacity: '0',
       margin: '0 .3rem',
       borderRadius: '5px',
       backgroundColor: 'cornflowerblue',
       textTransform: 'capitalize',
       color: 'whitesmoke',
+      cursor: 'pointer',
       zIndex: '100', // jisho overlay is 95 >_<
+      // <pre> formatting
+      whiteSpace: 'pre-wrap',
+      wordWrap: 'break-word',
     });
     document.body.append(toast);
     const toastEl = document.getElementById('toast');
@@ -66,49 +73,47 @@ function ready(callback) {
   }
 }
 
-function fadeIn(el = {}, speed = 400) {
+function fadeIn(el = {}, targetOpacity = 1, speed = 400) {
   let opacity = +window.getComputedStyle(el).opacity;
   let time = +new Date();
-  if (opacity !== 0) return;
+  if (opacity >= targetOpacity) return;
 
   function tick() {
     opacity += ((new Date() - time) / speed);
     time = +new Date();
     el.style.opacity = opacity; // eslint-disable-line no-param-reassign
 
-    if (opacity < 1) window.requestAnimationFrame(tick);
+    if (opacity < targetOpacity) window.requestAnimationFrame(tick);
   }
 
   tick();
 }
 
-function fadeOut(el = {}, speed = 400) {
+function fadeOut(el = {}, targetOpacity = 0, speed = 400) {
   let opacity = +el.style.opacity;
   let time = +new Date();
-  if (opacity <= 0) return;
+  if (opacity <= targetOpacity) return;
 
   function tick() {
     opacity -= ((new Date() - time) / speed);
     time = +new Date();
     el.style.opacity = opacity; // eslint-disable-line no-param-reassign
 
-    if (opacity > 0) window.requestAnimationFrame(tick);
+    if (opacity > targetOpacity) window.requestAnimationFrame(tick);
   }
 
   tick();
 }
 
-function addHighlight({ target } = {}) {
-  // contains is a prototype method on a domTokenList, otherwise this would be Array.from(classList).includes(className)
-  Object.assign(target.style, {
-    boxShadow: '0 0 4px 0 tomato',
+function addHighlight() {
+  $(this).css({
+    boxShadow: '0 0 4px 0 cornflowerblue',
     cursor: 'pointer',
   });
 }
 
-function removeHighlight({ target } = {}) {
-  // contains is a prototype method on a domTokenList, otherwise this would be Array.from(classList).includes(className)
-  Object.assign(target.style, {
+function removeHighlight() {
+  $(this).css({
     boxShadow: 'none',
   });
 }
