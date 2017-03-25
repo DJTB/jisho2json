@@ -1,45 +1,45 @@
 const TRIPLE_PRIME = {
-  re: /'''/g,
-  replacement: '\u2034', // ‴
+  regex: /'''/g,
+  replacement: '\u2034', //
 };
 const START_DOUBLE = {
-  re: /(\W|^)"(\S)/g,
+  regex: /(\W|^)"(\S)/g,
   replacement: '$1\u201c$2', // “
 };
 const END_DOUBLE = {
-  re: /(\u201c[^"]*)"([^"]*$|[^\u201c"]*\u201c)/g,
+  regex: /(\u201c[^"]*)"([^"]*$|[^\u201c"]*\u201c)/g,
   replacement: '$1\u201d$2', // ”
 };
 const FINAL_DOUBLE = {
-  re: /([^0-9])"/g,
+  regex: /([^0-9])"/g,
   replacement: '$1\u201d', // ”
 };
 const DOUBLE_PRIME = {
-  re: /''/g,
+  regex: /''/g,
   replacement: '\u2033', // ″
 };
 const START_SINGLE = {
-  re: /(\W|^)'(\S)/g,
+  regex: /(\W|^)'(\S)/g,
   replacement: '$1\u2018$2', // ‘
 };
 const POSSESSIVE_SINGLE = {
-  re: /([a-z])'([a-z])/ig,
+  regex: /([a-z])'([a-z])/ig,
   replacement: '$1\u2019$2', // ’
 };
 const END_SINGLE = {
-  re: /((\u2018[^']*)|[a-z])'([^0-9]|$)/ig,
+  regex: /((\u2018[^']*)|[a-z])'([^0-9]|$)/ig,
   replacement: '$1\u2019$3', // ’
 };
 const YEAR_ABBREVIATION = {
-  re: /(\u2018)([0-9]{2}[^\u2019]*)(\u2018([^0-9]|$)|$|\u2019[a-z])/ig,
+  regex: /(\u2018)([0-9]{2}[^\u2019]*)(\u2018([^0-9]|$)|$|\u2019[a-z])/ig,
   replacement: '\u2019$2$3', // ’
 };
 const BACKWARDS_APOSTROPHE = {
-  re: /(\B|^)\u2018(?=([^\u2019]*\u2019\b)*([^\u2019\u2018]*\W[\u2019\u2018]\b|[^\u2019\u2018]*$))/ig,
+  regex: /(\B|^)\u2018(?=([^\u2019]*\u2019\b)*([^\u2019\u2018]*\W[\u2019\u2018]\b|[^\u2019\u2018]*$))/ig,
   replacement: '$1\u2019', // ’
 };
 const SINGLE_PRIME = {
-  re: /'/g,
+  regex: /'/g,
   replacement: '\u2032', // ′
 };
 
@@ -58,5 +58,5 @@ const PROCESSING_ORDER = [
 ];
 
 export default function smartQuotes(input = '') {
-  return PROCESSING_ORDER.reduce((output, { re, replacement }) => output.replace(re, replacement), input);
+  return PROCESSING_ORDER.reduce((output, { regex, replacement }) => output.replace(regex, replacement), input);
 }
