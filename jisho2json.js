@@ -143,7 +143,7 @@ function parseMeanings(element) {
 
     if (text.length) {
       defs.push({
-        meanings: text.split('; '),
+        meanings: text.split('; ').map(smartquotes),
         notes: parseInfo(el),
         tags,
         sentences: parseSentences(el),
@@ -161,8 +161,8 @@ function parseTags(el) {
 
 function parseSentences(el) {
   return $.map($(el).find('.sentence'), (x) => ({
-    ja: $(x).find('.unlinked').text(),
-    en: $(x).find('.english').text(),
+    ja: smartquotes($(x).find('.unlinked').text()),
+    en: smartquotes($(x).find('.english').text()),
   }));
 }
 
