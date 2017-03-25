@@ -28,7 +28,6 @@ const styles = `
     border: 4px solid gainsboro;
     border-radius: 5px;
     background-color: cornflowerblue;
-    text-transform: capitalize;
     color: whitesmoke;
     cursor: pointer;
     z-index: 100; /* jisho overlay is at 95 already */
