@@ -1,17 +1,14 @@
 const webpack = require('webpack');
-const path = require('path');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-const DedupePlugin = webpack.optimize.DedupePlugin;
 const OccurrenceOrderPlugin = webpack.optimize.OccurrenceOrderPlugin;
 
 const plugins = [
   new CircularDependencyPlugin({
-    exclude: /a\.js|node_modules/, // exclude node_modules
+    exclude: /node_modules/, // exclude node_modules
     failOnError: false, // show a warning when there is a circular dependency
   }),
-  new DedupePlugin(),
   new UglifyJsPlugin({
     minimize: true,
     output: {
@@ -37,17 +34,16 @@ module.exports = {
     umdNamedDefine: false,
   },
   module: {
-    loaders: [
+    rules: [
       {
+        test: /\.js$/,
         exclude: [/node_modules/],
-        loader: 'babel',
+        use: [{
+          loader: 'babel-loader',
+          options: { presets: ['es2015'] },
+        }],
       },
     ],
-  },
-  resolve: {
-    modules: ['src', 'node_modules'],
-    root: path.resolve('./src'),
-    extensions: ['', '.js', '!test.js'],
   },
   plugins,
 };
