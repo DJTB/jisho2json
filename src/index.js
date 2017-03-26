@@ -48,7 +48,7 @@ function init() {
 
       // notify copied data
       console.info('Copied:\n', result);
-      toaster.updateText(result);
+      toaster.update(result);
       toaster.show();
     }
   };
