@@ -36,9 +36,10 @@ export function qsa(selector = '', container = null) {
 
 /**
  * Writes <style> tag and appends to document <head>
- * @param  {String} [style=''] string representation of css styles
+ * @param  {String} [style] string representation of css styles
  */
-export function writeStyles(style = '') {
+export function writeStyle(style) {
+  if (!style) return;
   const element = document.createElement('style');
   element.setAttribute('type', 'text/css');
   element.appendChild(document.createTextNode(style));

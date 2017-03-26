@@ -1,21 +1,24 @@
-import { CLASSNAMES } from './constants';
+import { classnames } from './constants';
 
 /**
  * css styles to be injected into head of jisho document
  * @type {String} css rules
  */
-const styles = `
+export const jishoStyle = `
    /* highlight clickable entries on hover */
-  .${CLASSNAMES.ENTRY} {
+  .${classnames.ENTRY} {
     transition: all .5s ease-in
   }
-  .${CLASSNAMES.ENTRY}:hover {
+  .${classnames.ENTRY}:hover {
     transition: all .3s ease-out;
     box-shadow: 0 0 4px 0 cornflowerblue;
     cursor: pointer;
   }
+`;
+
+export const toastStyle = `
   /* notification we will add to body */
-  .${CLASSNAMES.TOAST} {
+  .${classnames.TOAST} {
     position: fixed;
     top: .5rem;
     right: .5rem;
@@ -41,11 +44,9 @@ const styles = `
     /* disable clicks */
     pointer-events: none;
   }
-  .${CLASSNAMES.TOAST}.${CLASSNAMES.VISIBLE} {
+  .${classnames.TOAST}.${classnames.VISIBLE} {
     transition: opacity .25s ease-out;
     pointer-events: initial;
     opacity: .95;
   }
 `;
-
-export default styles;

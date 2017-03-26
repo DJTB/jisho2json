@@ -1,15 +1,15 @@
 /* eslint-disable no-console */
-import styles from './styles';
-import { ready, qs, qsa, writeStyles, findParent, findSibling } from './util/domHelpers';
+import { ready, qs, qsa, writeStyle, findParent, findSibling } from './util/domHelpers';
+import { jishoStyle } from './styles';
 import smartQuotes from './util/smartQuotes';
-import renderToast from './renderToast';
-import { ESC_KEYCODE, CLASSNAMES } from './constants';
+import renderToast from './util/renderToast';
+import { keycodes, classnames } from './constants';
 
 // TODO: put in constants when dev done
-const SELECTORS = {
-  TOAST: `.${CLASSNAMES.TOAST}`,
+const selectors = {
+  TOAST: `.${classnames.TOAST}`,
   ENTRIES: '#primary',
-  ENTRY: `.${CLASSNAMES.ENTRY}`,
+  ENTRY: `.${classnames.ENTRY}`,
   MEANINGS: '.meanings-wrapper',
   TAGS: '.meaning-tags',
   MEANING: '.meaning-wrapper',
@@ -32,14 +32,14 @@ const ifKeyDo = (key, callback) => ({ keyCode }) => {
 ready(init);
 
 function init() {
-  writeStyles(styles);
+  writeStyle(jishoStyle);
   const toaster = renderToast();
   console.info('jisho2json loaded');
 
   const onEntryClick = ({ target }) => {
     // click target could be a child of entry, walk up dom tree until parent "limit" looking for entry
-    const limit = qs(SELECTORS.ENTRIES);
-    const jishoEntry = findParent(SELECTORS.ENTRY, target, limit);
+    const limit = qs(selectors.ENTRIES);
+    const jishoEntry = findParent(selectors.ENTRY, target, limit);
 
     if (jishoEntry) {
       const result = buildEntries(jishoEntry);
@@ -54,20 +54,20 @@ function init() {
   };
 
   toaster.el.addEventListener('click', toaster.hide);
-  document.body.addEventListener('keyup', ifKeyDo(ESC_KEYCODE, toaster.hide));
+  document.body.addEventListener('keyup', ifKeyDo(keycodes.ESC, toaster.hide));
   document.body.addEventListener('click', onEntryClick);
 }
 
 function buildEntries(element) {
-  const entries = qsa(SELECTORS.MEANING, element)
+  const entries = qsa(selectors.MEANING, element)
     .map((el) =>
       buildEntry({
         element,
-        tags: findSibling(SELECTORS.TAGS, el),
-        counter: qs(SELECTORS.MEANING_COUNTER, el), // if no counter, it's a nonstandard meaning/info thin,
-        definition: qs(SELECTORS.MEANING_TEXT, el),
-        info: qsa(SELECTORS.MEANING_INFO, el),
-        sentence: qs(SELECTORS.MEANING_SENTENCE, el),
+        tags: findSibling(selectors.TAGS, el),
+        counter: qs(selectors.MEANING_COUNTER, el), // if no counter, it's a nonstandard meaning/info thin,
+        definition: qs(selectors.MEANING_TEXT, el),
+        info: qsa(selectors.MEANING_INFO, el),
+        sentence: qs(selectors.MEANING_SENTENCE, el),
       }));
 
   return JSON.stringify(entries, null, 2);
@@ -106,8 +106,8 @@ function parseInfo(elements) {
 
 function parseSentence(element) {
   if (element) {
-    const en = qs(SELECTORS.SENTENCE_EN, element);
-    const ja = qsa(SELECTORS.SENTENCE_JA_MORPHEMES, element)
+    const en = qs(selectors.SENTENCE_EN, element);
+    const ja = qsa(selectors.SENTENCE_JA_MORPHEMES, element)
       .map((node) => node.innerText)
       .join('');
 
@@ -120,8 +120,8 @@ function parseSentence(element) {
 }
 
 function buildReading(element) {
-  const character = getCleanText(qs(SELECTORS.READING_CHARACTER, element));
-  const kanaEl = qs(SELECTORS.READING_KANA, element);
+  const character = getCleanText(qs(selectors.READING_CHARACTER, element));
+  const kanaEl = qs(selectors.READING_KANA, element);
   const kana = getCleanText(kanaEl);
 
   return {
@@ -140,7 +140,7 @@ function parseKana(kana) {
 }
 
 function getWordTag(element, word) {
-  const result = qsa(SELECTORS.WORD_TAGS, element)
+  const result = qsa(selectors.WORD_TAGS, element)
     .filter((el) => el.innerText.includes(word))
     .shift();
   return (result && result.innerText) || null;

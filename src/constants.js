@@ -1,7 +1,9 @@
-export const CLASSNAMES = {
+export const classnames = {
   TOAST: 'toast',
   ENTRY: 'concept_light',
   VISIBLE: 'is--visible',
 };
 
-export const ESC_KEYCODE = 27;
+export const keycodes = {
+  ESC: 27,
+};
