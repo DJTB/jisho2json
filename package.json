@@ -1,11 +1,13 @@
 {
   "name": "jisho2json",
-  "description": "A simple chrome extension to copy a clicked [Jisho.org](http://jisho.org) entry as stringified JSON.",
+  "description": "A simple chrome extension to copy a clicked [Jisho.org](http://jisho.org) entry as JSON.",
   "version": "1.3.1",
   "main": "lib/index.js",
   "scripts": {
-    "build": "npm run build:js && npm run build:crx",
-    "build:js": "webpack --color -p --progress --hide-modules",
+    "build": "npm run build:production && npm run build:crx",
+    "build:watch": "onchange './src/**/*.js' -- npm run build:dev",
+    "build:dev": "cross-env NODE_ENV=dev webpack --config webpack.config.js --color --progress",
+    "build:production": "cross-env NODE_ENV=production webpack --config webpack.config.js --color -p --progress",
     "build:crx": "crx pack ./lib -o ./jisho2json.crx ",
     "test": "jest",
     "test:watch": "jest --watchAll"
@@ -56,8 +58,10 @@
     "babel-loader": "~6.4.1",
     "babel-preset-es2015": "~6.24.0",
     "circular-dependency-plugin": "~2.0.0",
+    "cross-env": "~3.2.4",
     "crx": "~3.2.1",
     "jest": "~19.0.2",
+    "onchange": "~3.2.1",
     "webpack": "~2.3.2"
   }
 }

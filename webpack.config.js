@@ -1,10 +1,38 @@
 const webpack = require('webpack');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 
+const env = process.env.NODE_ENV;
 const libraryName = process.env.npm_package_name;
-const outputFile = `${libraryName}.js`;
+const plugins = [];
+let outputFile = `${libraryName}.js`;
+let devtool;
+
+if (env === 'dev') {
+  devtool = 'source-map';
+}
+
+if (env === 'production') {
+  plugins.push(
+    new CircularDependencyPlugin({
+      exclude: /a\.js|node_modules/, // exclude node_modules
+      failOnError: false, // show a warning when there is a circular dependency
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      output: {
+        comments: false,
+      },
+      compressor: {
+        warnings: false,
+      },
+    }));
+  outputFile = `${libraryName}.min.js`;
+}
 
 module.exports = {
+  devtool,
+  plugins,
   entry: `${__dirname}/src/index.js`,
   output: {
     path: `${__dirname}/lib/`,
@@ -25,20 +53,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new CircularDependencyPlugin({
-      exclude: /node_modules/, // exclude node_modules
-      failOnError: false, // show a warning when there is a circular dependency
-    }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      output: {
-        comments: false,
-      },
-      compressor: {
-        warnings: false,
-      },
-    }),
-  ],
 };

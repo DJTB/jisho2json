@@ -15,8 +15,6 @@
   "content_scripts": [{
     "matches": ["http://jisho.org/*/*"],
     "js": [
-      "jquery-3.2.0.min.js",
-      "smartquotes.js",
       "jisho2json.js"
     ]
   }]

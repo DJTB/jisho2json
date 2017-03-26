@@ -1,9 +1,9 @@
 /**
- * Fires callback when dom is ready
+ * Fires callback when document object is ready
  * @param  {HTMLDocument} document dom
  * @param  {Function} callback whatchawannado
  */
-export default function domReady(document, callback) {
+export default function ready(document, callback) {
   if (document.readyState !== 'loading') {
     callback();
   } else {
