@@ -1,69 +1,72 @@
 /* eslint-disable no-console */
 import styles from './styles';
-import domReady from './util/domReady';
-import { domQs, domQsa } from './util/domSelectors';
+import { ready, qs, qsa, writeStyles } from './util/domHelpers';
 import getParent from './util/getParent';
 import smartQuotes from './util/smartQuotes';
+import { ESC_KEYCODE, CLASSNAMES } from './constants';
+
+// TODO: put in constants when dev done
+const SELECTORS = {
+  ENTRIES: '#primary',
+  ENTRY: `.${CLASSNAMES.ENTRY}`,
+};
+
+const ifKeyDo = (key, callback) => ({ keyCode }) => {
+  if (keyCode === key) callback();
+};
 
 // blastoff!
-domReady(init);
+ready(init);
 
 function init() {
   console.info('jisho2json loaded');
-  let toaster; // notification element
-  let pendingFade; // cancellable delayed fadeOut animation setTimeout timer
+  writeStyles(styles);
 
-  appendStyleToHead(styles);
+  const toaster = renderToast();
 
-  renderToast().then((toast) => {
-    toaster = toast;
-    toaster.addEventListener('click', () => toaster.classList.remove('--isVisible'));
-  }).catch(console.error);
+  toaster.updateText('wubbadubadubadubdub');
+  toaster.show();
 
+  const onEntryClick = ({ target }) => {
+    const entryJSON = copyEntry(target);
+    // voodoo magic in order to copy to keyboard via background page
+    chrome.extension.sendMessage({ text: entryJSON }); // eslint-disable-line no-undef
 
-  // parse and copy entry to clipboard
-  domQs('body').addEventListener('click', ({ target }) => {
-    const desiredTargetSelector = '.concept_light';
-    const limit = document.getElementById('primary');
-    // click target could be a child of entry, walk up dom tree until parent "limit" looking for entry
-    const jishoEntry = getParent(target, desiredTargetSelector, limit);
+    // notify copied data
+    console.info('Copied:\n', entryJSON);
+    toaster.updateText(entryJSON);
+    toaster.show();
+  };
 
-    if (jishoEntry) {
-      const entryJSON = JSON.stringify(buildEntry(jishoEntry), null, 2);
-
-      // voodoo magic in order to copy to keyboard via background page
-      chrome.extension.sendMessage({ text: entryJSON }); // eslint-disable-line no-undef
-
-      // notify copied data
-      console.info('Copied:\n', (entryJSON));
-      toaster.textContent = entryJSON; // eslint-disable-line no-param-reassign
-      toaster.classList.add('--isVisible');
-      clearTimeout(pendingFade);
-      pendingFade = setTimeout(() => toaster.classList.remove('--isVisible'), 5000);
-    }
-  });
+  toaster.el.addEventListener('click', toaster.show);
+  toaster.el.addEventListener('keyup', ifKeyDo(ESC_KEYCODE, toaster.hide));
+  document.body.addEventListener('click', onEntryClick);
 }
 
-function appendStyleToHead(style) {
-  const element = document.createElement('style');
-  element.setAttribute('type', 'text/css');
-  element.appendChild(document.createTextNode(style));
-  document.head.appendChild(element);
+function copyEntry(target) {
+  const desiredTargetSelector = SELECTORS.ENTRY;
+  const limit = document.getElementById(SELECTORS.ENTRIES);
+  // click target could be a child of entry, walk up dom tree until parent "limit" looking for entry
+  const jishoEntry = getParent(target, desiredTargetSelector, limit);
+  return buildEntry(jishoEntry);
 }
 
 function renderToast() {
-  return new Promise((resolve, reject) => {
-    const toast = document.createElement('pre');
-    Object.assign(toast, {
-      className: 'toast',
-      textContent: 'jisho2json loaded',
-    });
+  const toast = document.createElement('pre');
 
-    document.body.appendChild(toast);
-
-    const toastEl = domQs('.toast');
-    return toastEl ? resolve(toastEl) : reject(new Error('Toast element not added to body'));
+  Object.assign(toast, {
+    className: CLASSNAMES.TOAST,
+    textContent: 'jisho2json loaded',
   });
+
+  const el = document.body.appendChild(toast);
+
+  return {
+    el,
+    show: () => el.classList.toggle(CLASSNAMES.VISIBLE, true),
+    hide: () => el.classList.toggle(CLASSNAMES.VISIBLE, false),
+    updateText: (text) => { el.textContent = text; },
+  };
 }
 
 
@@ -71,12 +74,12 @@ function buildEntry(element) {
   const meanings = buildMeanings(element); // parseMeanings(element)
   const readings = buildReadings(element);
 
-  return [
-    {
-      meanings, // []
-      readings, // []
-    },
-  ];
+  const entry = [{
+    meanings, // []
+    readings, // []
+  }];
+
+  return JSON.stringify(entry, null, 2);
 }
 
 function buildReadings(element) {
@@ -97,7 +100,7 @@ function isCommon(element) {
 }
 
 function getJlpt(element) {
-  return domQsa('.concept_light-tag', element)
+  return qsa('.concept_light-tag', element)
     .filter((node) => node.innerText.includes('JLPT'))
     .map((node) => node.innerText) || null;
 }
@@ -105,25 +108,24 @@ function getJlpt(element) {
 
 function parseKana(element) {
   const re = /(?!\b)\W+$/;
-  const kana = domQs('.f-dropdown li:nth-of-type(2)', element); // FIXME: does selector work outside jQuery?
+  const kana = qs('.f-dropdown li:nth-of-type(2)', element); // FIXME: does selector work outside jQuery?
   const [kanaText] = (getText(kana).match(re) || []);
   return kanaText;
 }
 
 function parseKanji(element) {
-  return getText(domQs('.text', element));
+  return getText(qs('.text', element));
 }
 
 function buildMeanings(element) {
   const defs = [];
-  const defNodes = domQsa('.meaning-wrapper', element)
-    .filter((node) => node.innerText.includes('Wikipedia')); // might have to check siblings?
+  const defNodes = qsa('.meaning-wrapper', element).filter((node) => node.innerText.includes('Wikipedia')); // might have to check siblings?
 
   defNodes.forEach((el) => {
     const tags = parseTags(el);
 
     // only numbered meanings have this class followed by meaning text
-    const target = domQs('.meaning-definition-section_divider + span', el);
+    const target = qs('.meaning-definition-section_divider + span', el);
     const meanings = getText(target).split('; ');
 
     if (meanings.length) {
@@ -140,13 +142,13 @@ function buildMeanings(element) {
 }
 
 function parseTags(element) {
-  const tags = domQs('.meaning-tags', element.previousElementSibling());
+  const tags = qs('.meaning-tags', element.previousElementSibling());
   const tagText = getText(tags);
   return tags === '' ? [] : tagText.split(', ');
 }
 
 function parseSentence(element) {
-  const sentenceNodes = Array.from(domQs('', element).children);
+  const sentenceNodes = Array.from(qs('', element).children);
   const jaSentence = sentenceNodes.filter((child) => !child.classList.contains('english'));
   const enSentence = sentenceNodes.filter((child) => child.classList.contains('english'));
   // smartQuotes($(x).find('.unlinked').text())
@@ -158,7 +160,7 @@ function parseSentence(element) {
 }
 
 function parseInfo(element) {
-  return domQsa('.supplemental_info .tag-tag', element).map(getText);
+  return qsa('.supplemental_info .tag-tag', element).map(getText);
 }
 
 function getText(node) {
