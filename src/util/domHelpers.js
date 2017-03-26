@@ -44,3 +44,30 @@ export function writeStyles(style = '') {
   element.appendChild(document.createTextNode(style));
   document.head.appendChild(element);
 }
+
+/**
+ * Returns the first parent that matches selector, exiting if limit or document is reached
+ * @param  {String} selector target css selector, generally an id or class name
+ * @param  {HTMLElement} el HTML Element to begin traversing
+ * @param  {String} limit limit css selector
+ * @return {HTMLElement|Null} the target element or null
+ */
+export function findParent(selector, el, limit) {
+  const isElementNode = el.nodeType === 1;
+  const limitReached = el === limit;
+
+  if (isElementNode && el.matches(selector)) return el;
+
+  return (!limitReached && el.parentNode) ? findParent(selector, el.parentNode) : null;
+}
+
+/**
+ * Returns the first sibling that matches selector
+ * @param  {String} selector target css selector, generally an id or class name
+ * @param  {HTMLElement} el HTML Element to begin traversing
+ * @return {HTMLElement|Null} the target element or null
+ */
+export function findSibling(selector, el) {
+  if (el.matches(selector)) return el;
+  return el.previousSibling ? findSibling(selector, el.previousSibling) : null;
+}

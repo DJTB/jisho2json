@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "npm run build:production && npm run build:crx",
-    "build:watch": "onchange './src/**/*.js' -- npm run build:dev",
+    "build:watch": "onchange './src/**/*.js' -d 5000 -- npm run build:dev",
     "build:dev": "cross-env NODE_ENV=dev webpack --config webpack.config.js --color --progress",
     "build:production": "cross-env NODE_ENV=production webpack --config webpack.config.js --color -p --progress",
     "build:crx": "crx pack ./lib -o ./jisho2json.crx ",
