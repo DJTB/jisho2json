@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
-import { ready, qs, qsa, writeStyle, findParent, findSibling } from './util/domHelpers';
+import { ready, qs, qsa, writeStyle, findParent, findSibling, isNode, isTextNode } from './util/domHelpers';
 import { jishoStyle } from './styles';
 import smartQuotes from './util/smartQuotes';
+import hasLength from './util/hasLength';
 import renderToast from './util/renderToast';
 import { keycodes, classnames } from './constants';
 
@@ -15,7 +16,7 @@ const selectors = {
   MEANING: '.meaning-wrapper',
   MEANING_COUNTER: '.meaning-definition-section_divider',
   MEANING_TEXT: '.meaning-meaning',
-  MEANING_INFO: '.supplemental_info .sense-tag',
+  MEANING_NOTE: '.supplemental_info .sense-tag',
   MEANING_SENTENCE: '.sentence ul',
   SENTENCE_EN: '.english',
   SENTENCE_JA_MORPHEMES: 'li > span:not(.english):not(.furigana)',
@@ -58,78 +59,65 @@ function init() {
   document.body.addEventListener('click', onEntryClick);
 }
 
-function buildEntries(element) {
-  const entries = qsa(selectors.MEANING, element)
-    .map((el) =>
-      buildEntry({
-        element,
-        tags: findSibling(selectors.TAGS, el),
-        counter: qs(selectors.MEANING_COUNTER, el), // if no counter, it's a nonstandard meaning/info thin,
-        definition: qs(selectors.MEANING_TEXT, el),
-        info: qsa(selectors.MEANING_INFO, el),
-        sentence: qs(selectors.MEANING_SENTENCE, el),
-      }));
+function buildEntries(container) {
+  const entries = qsa(selectors.MEANING, container)
+    .map((element) => buildEntry(container, element))
+    .filter((entry) => entry != null);
 
+  /*
+    TODO: need to allow user to choose to combine multiple meanings into a single meaning (perhaps very similar)
+    TODO: need to allow user to add alternate readings to a meaning (like 伸びる & 延びる)
+  */
+  const otherForms = qsa(selectors.TAGS)
+    .filter((tag) => tag.innerText.includes('other forms'))
+    .shift();
+  const otherFormsText = otherForms.nextSibling;
+  const synonyms = otherFormsText ? parseSynonyms(otherForms) : null;
+  console.log(synonyms);
   return JSON.stringify(entries, null, 2);
 }
 
-function buildEntry({ element, tags, counter, definition, info, sentence }) {
-  const ordinal = parseInt(getCleanText(counter), 10);
-  const lexemes = getCleanText(definition).split('; ');
+function buildEntry(container, element) {
+  const counterNode = qs(selectors.MEANING_COUNTER, element);
+  const tagsNode = findSibling(selectors.TAGS, element);
+  const definitionNode = qs(selectors.MEANING_TEXT, element);
+  const noteNodes = qsa(selectors.MEANING_NOTE, element);
 
-  const type = (() => {
-    const isWikipedia = tags.innerText.includes('Wikipedia');
-    const isOther = tags.innerText.includes('Other forms');
-    switch (true) {
-      case (isWikipedia): return 'wiki';
-      case (isOther): return 'other';
-      case (!Number.isNaN(ordinal)): return 'standard';
-      default: return 'unknown';
-    }
-  })();
+  const counter = parseInt(getCleanText(counterNode), 10);
+  const isMainDefinition = Number.isInteger(counter);
+
+  if (!isMainDefinition) {
+    return null;
+  }
 
   return {
-    type,
-    tags: getCleanText(tags).split(', '),
-    meaning: lexemes,
-    reading: buildReading(element),
-    notes: parseInfo(info),
-    sentence: parseSentence(sentence),
+    counter,
+    tags: getCleanText(tagsNode).split(', '),
+    notes: parseNotes(noteNodes),
+    meaning: getCleanText(definitionNode).split('; '),
+    reading: buildReading(container, element),
   };
 }
 
-function parseInfo(elements) {
-  // TODO: only allow/keep certain info?
-  // TODO: regex /Only applies to (<reading>)/ to later on map specfic vocab readings to this meaning?
-  return elements.map(getCleanText);
+function parseNotes(elements) {
+  // TODO: only allow/keep certain notes?
+  // TODO: combine "other forms" that aren't "obsolete" into synonyms
+  return elements.map(getCleanText).filter(hasLength);
 }
 
-function parseSentence(element) {
-  if (element) {
-    const en = qs(selectors.SENTENCE_EN, element);
-    const ja = qsa(selectors.SENTENCE_JA_MORPHEMES, element)
-      .map((node) => node.innerText)
-      .join('');
-
-    return {
-      en: getCleanText(en),
-      ja: getCleanText(ja),
-    };
-  }
-  return null;
-}
-
-function buildReading(element) {
-  const character = getCleanText(qs(selectors.READING_CHARACTER, element));
-  const kanaEl = qs(selectors.READING_KANA, element);
-  const kana = getCleanText(kanaEl);
+function buildReading(container, element) {
+  const character = getCleanText(qs(selectors.READING_CHARACTER, container));
+  const kana = getCleanText(qs(selectors.READING_KANA, container));
+  const sentenceEn = getCleanText(qs(selectors.SENTENCE_EN, element)) || '';
+  const sentenceJa = qsa(selectors.SENTENCE_JA_MORPHEMES, element).map(getCleanText).join('');
 
   return {
     character,
     kana: parseKana(kana) || character, // sometimes character entry was hiragana and there is no 'kana'
-    sentence: parseSentence(element),
-    jlpt: getWordTag(element, 'jlpt'),
-    common: getWordTag(element, 'common'),
+    sentenceEn,
+    sentenceJa,
+    jlpt: getWordTag(container, 'jlpt'),
+    common: getWordTag(container, 'common'),
   };
 }
 
@@ -143,18 +131,26 @@ function getWordTag(element, word) {
   const result = qsa(selectors.WORD_TAGS, element)
     .filter((el) => el.innerText.includes(word))
     .shift();
-  return (result && result.innerText) || null;
+  return (isNode(result) && result.innerText) || '';
+}
+
+function parseSynonyms(text) {
+  // "八 【や】、８ 【はち】、８ 【や】、捌 【はち】、捌 【や】"
+  const units = text.split(/、|、 /g);
+  const result = units.map((x) => x.match(/(.*)(【.*】)/g));
+  return result;
 }
 
 /**
- * Get text and transform quotes
+ * Get text from node and transform quotes
  * @param  {String|HTMLElement|Text} input string | dom element | text node
  * @return {String} text
  */
 function getCleanText(input) {
-  if (input == null) return null;
-  const isNode = input.nodeType === 1;
-  const isTextNode = input.nodetype === 3;
-  const text = ((isNode && input.innerText) || (isTextNode && input.textContent) || input).trim();
-  return smartQuotes(text);
+  let text = input;
+  if (isNode(input)) text = input.innerText;
+  if (isTextNode(input)) text = input.textContent;
+  if (input == null || typeof text !== 'string') return '';
+
+  return smartQuotes(text.trim());
 }

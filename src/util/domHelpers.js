@@ -72,3 +72,7 @@ export function findSibling(selector, el) {
   if (el.matches(selector)) return el;
   return el.previousSibling ? findSibling(selector, el.previousSibling) : null;
 }
+
+const hasNodeType = (node) => node != null && Number.isInteger(node.nodeType);
+export const isNode = (node) => hasNodeType(node) && node.nodeType === 1;
+export const isTextNode = (node) => hasNodeType(node) && node.nodeType === 3;

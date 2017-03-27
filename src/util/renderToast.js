@@ -19,7 +19,7 @@ export default function renderToast() {
   let pendingFade;
 
   function update(html) {
-    el.innerHtml = html;
+    el.innerText = html;
   }
 
   function show() {

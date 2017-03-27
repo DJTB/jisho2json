@@ -1,5 +1,8 @@
 import { classnames } from './constants';
 
+const primaryColorRGB = '100, 150, 240';
+const primaryColor = `rgb(${primaryColorRGB})`;
+
 /**
  * css styles to be injected into head of jisho document
  * @type {String} css rules
@@ -11,30 +14,30 @@ export const jishoStyle = `
   }
   .${classnames.ENTRY}:hover {
     transition: all .3s ease-out;
-    box-shadow: 0 0 4px 0 cornflowerblue;
+    box-shadow: 0 0 4px 0 ${primaryColor};
     cursor: pointer;
   }
 `;
+
 
 export const toastStyle = `
   /* notification we will add to body */
   .${classnames.TOAST} {
     position: fixed;
-    top: .5rem;
-    right: .5rem;
-    bottom: .5rem;
-    left: .5rem;
-    padding: .5rem;
-    max-width: calc(100vw - 1rem);
-    max-height: calc(100vh - 1rem);
+    font-size: 18px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: .25em;
+    max-width: calc(100vw);
+    max-height: calc(50vh);
     overflow: auto;
-    font-size: 1.2rem;
     opacity: 0;
-    margin: 0 .3rem;
-    border: 4px solid gainsboro;
-    border-radius: 5px;
-    background-color: cornflowerblue;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    border: 4px solid rgba(${primaryColorRGB}, .6);
+    border-top-color: rgba(${primaryColorRGB}, .8);
+    color: #444;
     cursor: pointer;
     z-index: 100; /* jisho overlay is at 95 already */
     /* <pre> formatting */
