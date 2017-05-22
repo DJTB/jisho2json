@@ -5,6 +5,7 @@ const Task = require('data.task');
 const future = require('futurize').futurize(Task);
 const { fromJS } = require('immutable');
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 const purdy = require('purdy');
 const clip = require('copy-paste');
@@ -15,9 +16,7 @@ const prettyLog = (values) => purdy(values, { depth: 4, indent: 2 });
 const readFile = future(fs.readFile);
 const writeFile = future(fs.writeFile);
 
-console.log(process.cwd());
-const FILE_DIR = './';
-const WORDLIST_FILE = path.join(FILE_DIR, 'wordList.json');
+const WORDLIST_FILE = path.join(os.homedir(), 'Documents', 'jisho2json', 'wordList.json');
 const QUIZ_FILE = addFilenameSuffix(WORDLIST_FILE, '-quiz');
 
 /**

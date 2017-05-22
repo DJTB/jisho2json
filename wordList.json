@@ -17549,9 +17549,198 @@
             "Noun",
             "No-adjective"
           ],
+          "sentences": [
+            {
+              "ja": "彼は虚偽の陳述をした",
+              "en": "He made a false statement."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "盛り付け",
+        "readings": "もりつけ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "arrangement of food (on a dish)",
+            "serving of (arranged) food"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "彩りや盛り付けなどが、和食を見た目に美しい料理にしています",
+              "en": "Its color and arrangement make Japanese cuisine visually beautiful."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "引き継ぐ",
+        "readings": "ひきつぐ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "to take over",
+            "to hand over"
+          ],
+          "notes": [],
+          "tags": [
+            "Godan verb with gu ending",
+            "Transitive verb"
+          ],
+          "sentences": [
+            {
+              "ja": "私の息子が仕事を引き継ぐだろう",
+              "en": "My son will take over the job."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "蛇口",
+        "readings": "じゃぐち"
+      },
+      "en": [
+        {
+          "meanings": [
+            "faucet",
+            "tap"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "この蛇口は使えません故障しています",
+              "en": "You can’t use this faucet. It’s out of order."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "燕",
+        "readings": "つばめ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "swallow (bird)"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "たくさんのツバメがまもなく南からやってくる",
+              "en": "Many swallows will come soon from the south."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "技術的",
+        "readings": "ぎじゅつてき"
+      },
+      "en": [
+        {
+          "meanings": [
+            "technical",
+            "practical"
+          ],
+          "notes": [],
+          "tags": [
+            "Na-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "あなたはその技術的な問題をいつ片づけたのですか",
+              "en": "When did you get through with your engineering problem?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "通路",
+        "readings": "つうろ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "passage",
+            "pathway",
+            "roadway",
+            "avenue",
+            "aisle"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "これが海への通路だ",
+              "en": "This is the passage to the sea."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "活字",
+        "readings": "かつじ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "printing type",
+            "movable type",
+            "printed text",
+            "print"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
           "sentences": [{
-          	"ja": "彼は虚偽の陳述をした",
-"en": "He made a false statement."
+  "ja": "お名前とご住所をはっきり活字体で書いてください",
+"en": "Please clearly print your name and address."
           }]
         }
       ]
