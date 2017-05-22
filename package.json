@@ -1,6 +1,6 @@
 {
   "name": "jisho2json",
-  "version": "1.0.0",
+  "version": "1.4.1",
   "description": "A simple chrome extension to copy a clicked [Jisho.org](http://jisho.org) entry as stringified JSON.",
   "main": "index.js",
   "scripts": {
