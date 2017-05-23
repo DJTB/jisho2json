@@ -17738,9 +17738,322 @@
           "tags": [
             "Noun"
           ],
+          "sentences": [
+            {
+              "ja": "お名前とご住所をはっきり活字体で書いてください",
+              "en": "Please clearly print your name and address."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "安静",
+        "readings": "あんせい"
+      },
+      "en": [
+        {
+          "meanings": [
+            "complete rest",
+            "quiet",
+            "repose"
+          ],
+          "notes": [],
+          "tags": [
+            "Na-adjective",
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "しばらく安静にしておきなさい",
+              "en": "Keep quiet in bed for a while."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "手料理",
+        "readings": "てりょうり"
+      },
+      "en": [
+        {
+          "meanings": [
+            "home cooking",
+            "cooking food at home"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "君の手料理がきっと恋しくなると思うよ",
+              "en": "I’ll miss your cooking."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N3",
+      "ja": {
+        "characters": "多少",
+        "readings": "たしょう"
+      },
+      "en": [
+        {
+          "meanings": [
+            "more or less",
+            "somewhat",
+            "a little",
+            "a few",
+            "some"
+          ],
+          "notes": [],
+          "tags": [
+            "Adverb",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "私達は多少の遅れを考慮に入れなければいけません",
+              "en": "We must allow for some delays."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "間に",
+        "readings": "あいだに"
+      },
+      "en": [
+        {
+          "meanings": [
+            "while",
+            "during (the time when)",
+            "(XとYの) between"
+          ],
+          "notes": [],
+          "tags": [
+            "Adverb"
+          ],
+          "sentences": [
+            {
+              "ja": "「あなたがいない間に掃除を全部終わらせたからね」「うわっ、すごいですね」",
+              "en": "“I did all the cleaning while you were out.” “Wow, I'm impressed.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "僻む",
+        "readings": "ひがむ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "to be prejudiced",
+            "to be sour about",
+            "to have an inferiority complex",
+            "to be jealous"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Godan verb with mu ending"
+          ],
+          "sentences": [
+            {
+              "ja": "ひがむなよ",
+              "en": "Don't feel sorry for yourself."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "自己中心",
+        "readings": "じこちゅうしん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "selfishness",
+            "self-centered",
+            "egotism"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "彼は自己中心的でうぬぼれてるよね",
+              "en": "He's self-centered and conceited."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "自惚れ",
+        "readings": "うぬぼれ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "pretension",
+            "conceit",
+            "hubris"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Noun",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "誰でも大なり小なりうぬぼれはある",
+              "en": "Everyone is more or less conceited."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "貝殻",
+        "readings": "かいがら"
+      },
+      "en": [
+        {
+          "meanings": [
+            "shell",
+            "seashell"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "は美しい貝がらを浜辺でひろった",
+              "en": "Tom picked up some pretty shells on the beach."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "水臭い",
+        "readings": "みずくさい"
+      },
+      "en": [
+        {
+          "meanings": [
+            "stand-offish",
+            "distant",
+            "secretive",
+            "reserved",
+            "watery (alcohol, coffee, etc.)"
+          ],
+          "notes": [],
+          "tags": [
+            "I-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "水くさいぞ",
+              "en": "You aren't being open with me."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "屑",
+        "readings": "くず"
+      },
+      "en": [
+        {
+          "meanings": [
+            "trash",
+            "dregs",
+            "scum"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Noun",
+            "Noun or verb acting prenominally"
+          ],
+          "sentences": [
+            {
+              "ja": "貧しい人々から盗む泥棒は人間のくずだ",
+              "en": "A thief who steals from poor people is scum."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "しつこい",
+        "readings": "しつっこい"
+      },
+      "en": [
+        {
+          "meanings": [
+            "insistent",
+            "obstinate",
+            "persistent",
+            "tenacious"
+          ],
+          "notes": [],
+          "tags": [
+            "I-adjective"
+          ],
           "sentences": [{
-  "ja": "お名前とご住所をはっきり活字体で書いてください",
-"en": "Please clearly print your name and address."
+            "ja": "もうしつこいなあ",
+            "en": "Lay off already."
           }]
         }
       ]
