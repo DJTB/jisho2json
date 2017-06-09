@@ -13,6 +13,28 @@ const { argv } = require('yargs');
 
 const prettyLog = (values) => purdy(values, { depth: 4, indent: 2 });
 
+/*
+// Alternative to using future, using Node 8 util.promisify to turn callback method into promise + async->await!
+
+const {promisify} = require('util');
+
+const fs = require('fs');
+const readFileAsync = promisify(fs.readFile);
+
+const filePath = process.argv[2];
+
+async function readFileAA() {
+  try {
+    const text = await readFileAsync(filePath, {encoding: 'utf8'});
+    console.log('CONTENT:', text);
+  }
+  catch (err) {
+    console.log('ERROR:', err);
+  }
+}
+readFileAA();
+*/
+
 const readFile = future(fs.readFile);
 const writeFile = future(fs.writeFile);
 
