@@ -14459,16 +14459,7 @@
         {
           "meanings": [
             "tired",
-            "frazzled"
-          ],
-          "notes": [],
-          "tags": [
-            "I-adjective"
-          ],
-          "sentences": []
-        },
-        {
-          "meanings": [
+            "frazzled",
             "tiresome",
             "exhausting",
             "worrisome",
@@ -19119,6 +19110,89 @@
               "en": "Lots of herons live in the marsh."
             }
           ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "教員",
+        "readings": "きょういん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "teacher",
+            "instructor",
+            "teaching staff",
+            "faculty member"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "お前は教員になる決心をしたのか",
+              "en": "Have you made up your mind to become a teacher?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "民主主義",
+        "readings": "みんしゅしゅぎ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "democracy"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "私は民主主義の味方だ",
+              "en": "I am on the side of democracy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "ぼろぼろ",
+        "readings": "ボロボロ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "worn-out",
+            "tattered",
+            "falling apart",
+            "crumbling to pieces"
+          ],
+          "notes": [
+            "Onomatopoeic or mimetic word"
+          ],
+          "tags": [
+            "No-adjective",
+            "Na-adjective"
+          ],
+          "sentences": [{
+              "ja": "トイレマット、買い換えないとな。ぼろぼろだわ",
+              "en": "I need to replace the bathroom mat. It's worn out."
+            }]
         }
       ]
     }
