@@ -31,7 +31,8 @@ async function writeFile(filePath, data) {
 
 async function readWordList(file) {
   try {
-    return JSON.parse(await readFile(file)).entries;
+    const content = await readFile(file);
+    return JSON.parse(content).entries;
   } catch (err) {
     return traceAndThrow(err, 'Unable to parse JSON from wordList file.');
   }
@@ -46,7 +47,7 @@ function getClipboardJSON() {
     }
     return clipped;
   } catch (err) {
-    return traceAndThrow(err, 'Invalid data from clipboard');
+    return traceAndThrow(err, 'Invalid data pasted from clipboard.');
   }
 }
 
@@ -59,7 +60,7 @@ async function addNewVocab(vocabList, newItem) {
   const hasSimilarItems = getMatchingItems(vocabList, chars).length > 0;
 
   if (hasExactEntry || hasSimilarItems) {
-    throw Error(`An entry with ${chars} already exists in ${WORDLIST_FILE}!`);
+    throw Error(`An entry with ${chars} already exists in ${WORDLIST_FILE}.`);
   }
 
   log.success('Added new vocab: ');
@@ -68,9 +69,10 @@ async function addNewVocab(vocabList, newItem) {
   return vocabList.concat(newItem);
 }
 
-const addClipboardToVocab = (vocabList) => ({
-  entries: addNewVocab(vocabList, getClipboardJSON()),
-});
+async function addClipboardToVocab(vocabList) {
+  const entries = await addNewVocab(vocabList, getClipboardJSON());
+  return { entries };
+}
 
 function quizSerializer(vocabList) {
   // FIXME: doesn't work with new wordList format, need to edit!

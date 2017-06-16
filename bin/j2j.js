@@ -36,7 +36,8 @@ async function runner() {
   }
 
   if (argv.save) {
-    await writeFile(WORDLIST_FILE, JSON.stringify(addClipboardToVocab(wordList)));
+    const newList = await addClipboardToVocab(wordList);
+    await writeFile(WORDLIST_FILE, JSON.stringify(newList));
   }
 }
 
