@@ -40,6 +40,4 @@ async function runner() {
   }
 }
 
-runner()
-  .then(() => log.info('Complete!'))
-  .catch(log.error);
+runner().catch(log.error);
