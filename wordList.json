@@ -101,10 +101,12 @@
             "Na-adjective",
             "Noun"
           ],
-          "sentences": [{
-            "ja": "無人支払所にヘリコプターが無人の車にぶつかった",
-            "en": "At a self-service pay station, the helicopter slammed into an unoccupied car."
-          }]
+          "sentences": [
+            {
+              "ja": "無人支払所にヘリコプターが無人の車にぶつかった",
+              "en": "At a self-service pay station, the helicopter slammed into an unoccupied car."
+            }
+          ]
         }
       ]
     },
@@ -366,10 +368,12 @@
           "tags": [
             "Noun"
           ],
-          "sentences": [{
-            "ja": "そのボートは海岸線沿いに進んだ",
-            "en": "The boat hugged the coastline."
-          }]
+          "sentences": [
+            {
+              "ja": "そのボートは海岸線沿いに進んだ",
+              "en": "The boat hugged the coastline."
+            }
+          ]
         }
       ]
     },
@@ -390,7 +394,12 @@
           "tags": [
             "Noun"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "調味料がいつもとちょっと違うね",
+              "en": "I think the seasoning is a little different from usual."
+            }
+          ]
         }
       ]
     },
@@ -570,7 +579,9 @@
           "meanings": [
             "to be tied together",
             "to be connected to",
-            "to be linked to"
+            "to be linked to",
+            "to lead to",
+            "to be related to"
           ],
           "notes": [
             "Usually written using kana alone"
@@ -579,28 +590,12 @@
             "Godan verb with ru ending",
             "intransitive verb"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "to lead to",
-            "to be related to"
-          ],
-          "notes": [
-            "Usually written using kana alone"
-          ],
-          "tags": [],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "to be related (by blood)"
-          ],
-          "notes": [
-            "Usually written using kana alone"
-          ],
-          "tags": [],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "ささいな誤解が戦争の勃発につながるかもしれません",
+              "en": "Trivial misunderstandings might lead to the outbreak of war."
+            }
+          ]
         }
       ]
     },
@@ -617,25 +612,21 @@
             "decisively",
             "decidedly",
             "boldly",
-            "once and for all",
             "unreservedly",
-            "frankly"
+            "frankly",
+            "precisely"
           ],
           "notes": [],
           "tags": [
             "Adverb",
             "Adverb taking the ’to’ particle"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "precisely",
-            "exactly"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "ずばり要点だけ言おう",
+              "en": "I'll cut right to the chase."
+            }
+          ]
         }
       ]
     },
@@ -728,25 +719,19 @@
       "en": [
         {
           "meanings": [
-            "painful",
-            "heartrending",
-            "trying"
+            "sad and painful",
+            "heartrending"
           ],
           "notes": [],
           "tags": [
             "I-adjective"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "oppressive",
-            "suffocating",
-            "miserable"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "切ない思いで一杯だった",
+              "en": "I was filled with heartrending sorrow."
+            }
+          ]
         }
       ]
     },
@@ -767,7 +752,12 @@
           "tags": [
             "Noun"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "例えばあの虫、何と言うんだったかな、そう、セミ。あれこそまさに日本の夏ですね",
+              "en": "Let's say the, what do you call that insect, the semi. I mean, that's summer in Japan, you know."
+            }
+          ]
         }
       ]
     },
@@ -827,7 +817,8 @@
           "meanings": [
             "vague",
             "ambiguous",
-            "unclear"
+            "unclear",
+            "fuzzy"
           ],
           "notes": [],
           "tags": [
@@ -840,17 +831,6 @@
               "en": "That law is full of ambiguities."
             }
           ]
-        },
-        {
-          "meanings": [
-            "fuzzy"
-          ],
-          "notes": [
-            "Mathematics",
-            "Computer terminology"
-          ],
-          "tags": [],
-          "sentences": []
         }
       ]
     },
@@ -893,7 +873,6 @@
       "en": [
         {
           "meanings": [
-            "suspicious",
             "dubious",
             "doubtful",
             "dodgy",
@@ -914,16 +893,6 @@
               "en": "The sky looks angry."
             }
           ]
-        },
-        {
-          "meanings": [
-            "charming",
-            "bewitching",
-            "mysterious"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
         }
       ]
     },
@@ -1351,75 +1320,23 @@
       "en": [
         {
           "meanings": [
+            "business",
             "project",
             "enterprise",
-            "business",
-            "industry",
-            "operations",
             "venture",
-            "service"
+            "undertaking",
+            "operation"
           ],
           "notes": [],
           "tags": [
             "Noun"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "act",
-            "deed",
-            "conduct"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
-        }
-      ]
-    },
-    {
-      "common": true,
-      "jlpt": "JLPT N3",
-      "ja": {
-        "characters": "袋",
-        "readings": "ふくろ"
-      },
-      "en": [
-        {
-          "meanings": [
-            "bag",
-            "sack",
-            "pouch"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "skin of an orange (and other like fruits)"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "dead end"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "plot of land surrounded by water"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "事業に再投資した方がいいんじゃないか",
+              "en": "Shouldn't we reinvest it back into the business?"
+            }
+          ]
         }
       ]
     },
@@ -1475,35 +1392,6 @@
             {
               "ja": "私はこの本を買うのに十分なお金を持っている",
               "en": "I have enough money to buy this book."
-            }
-          ]
-        },
-        {
-          "meanings": [
-            "division into ten"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun",
-            "Suru verb"
-          ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "perfectly",
-            "thoroughly",
-            "fully",
-            "in full"
-          ],
-          "notes": [],
-          "tags": [
-            "Adverb"
-          ],
-          "sentences": [
-            {
-              "ja": "「もっと召し上がりますか」「いいえじゅうぶんいただきました」",
-              "en": "“Would you like any more?” “No, I’ve had enough.”"
             }
           ]
         }
@@ -1572,9 +1460,11 @@
       "en": [
         {
           "meanings": [
-            "to come along",
             "to come around",
-            "to turn up"
+            "to come by",
+            "to turn up",
+            "to show up",
+            "to arrive at the present"
           ],
           "notes": [
             "Usually written using kana alone"
@@ -1583,19 +1473,12 @@
             "Expression",
             "Kuru verb - special class"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "to arrive at the present",
-            "to get where one is",
-            "to have been doing something (for a period of time)"
-          ],
-          "notes": [
-            "Usually written using kana alone"
-          ],
-          "tags": [],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "チャンスはまたきっとやって来る",
+              "en": "I'm sure another opportunity will come."
+            }
+          ]
         }
       ]
     },
@@ -1753,7 +1636,6 @@
           "meanings": [
             "valley",
             "ravine",
-            "chasm",
             "dell"
           ],
           "notes": [],
@@ -1775,20 +1657,10 @@
           "tags": [],
           "sentences": [
             {
-              "ja": "には谷間を強調するブラジャーがある",
-              "en": "Yumiko has a push-up bra."
+              "ja": "彼女の胸の谷間は素晴らしい",
+              "en": "She has a great cleavage."
             }
           ]
-        },
-        {
-          "meanings": [
-            "Tani Ai (1976.3.9-)"
-          ],
-          "notes": [],
-          "tags": [
-            "Full name"
-          ],
-          "sentences": []
         }
       ]
     },
@@ -1880,7 +1752,12 @@
             "Expression",
             "I-adjective"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "そう考えてまず間違いないでしょう",
+              "en": "That's safe to assume."
+            }
+          ]
         },
         {
           "meanings": [
@@ -1894,7 +1771,12 @@
           "tags": [
             "Expression"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "絶対に間違いない",
+              "en": "I’d bet my life on it."
+            }
+          ]
         }
       ]
     },
@@ -2002,7 +1884,6 @@
           "meanings": [
             "once",
             "before",
-            "formerly",
             "ever",
             "former",
             "ex-"
@@ -2016,23 +1897,10 @@
           ],
           "sentences": [
             {
-              "ja": "一般に日本人は自分たちがかつてより暮らし向きがよくなったと考えている",
-              "en": "The Japanese at large consider themselves better off than they used to be."
+              "ja": "かつて、あそこには非常に大きな競技場がありました",
+              "en": "There used to be a huge stadium over there."
             }
           ]
-        },
-        {
-          "meanings": [
-            "never yet",
-            "never before",
-            "first time",
-            "still not happened"
-          ],
-          "notes": [
-            "Usually written using kana alone"
-          ],
-          "tags": [],
-          "sentences": []
         }
       ]
     },
@@ -2083,7 +1951,12 @@
             "Na-adjective",
             "Noun"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "映画全体が台無しになる",
+              "en": "The whole film doesn't work."
+            }
+          ]
         }
       ]
     },
@@ -2110,63 +1983,9 @@
           "sentences": [
             {
               "ja": "その女優はせりふを台なしにした",
-              "en": "The actress murdered her lines."
+              "en": "The actress screwed up her lines."
             }
           ]
-        }
-      ]
-    },
-    {
-      "common": false,
-      "jlpt": null,
-      "ja": {
-        "characters": "台無しになる",
-        "readings": "だいなしになる"
-      },
-      "en": [
-        {
-          "meanings": [
-            "to come to nothing",
-            "to be spoiled",
-            "to be spoilt"
-          ],
-          "notes": [],
-          "tags": [
-            "Expression",
-            "Godan verb with ru ending"
-          ],
-          "sentences": []
-        }
-      ]
-    },
-    {
-      "common": false,
-      "jlpt": null,
-      "ja": {
-        "characters": "お猪口",
-        "readings": "おちょこ"
-      },
-      "en": [
-        {
-          "meanings": [
-            "small cup",
-            "sake cup"
-          ],
-          "notes": [
-            "Usually written using kana alone"
-          ],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "cup-shaped"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
         }
       ]
     },
@@ -2267,7 +2086,8 @@
         {
           "meanings": [
             "to make a mistake",
-            "to err"
+            "to err",
+            "to slip up"
           ],
           "notes": [],
           "tags": [
@@ -2276,19 +2096,10 @@
           ],
           "sentences": [
             {
-              "ja": "は誤って父親の猟銃を発砲し壁に穴を開けた",
-              "en": "Willie accidentally let off his father’s shotgun and made a hole in the wall."
+              "ja": "その使い方を誤ると、大きなけがを負ったり、死亡したりすることがある",
+              "en": "Improper use of this can lead to serious injury or death."
             }
           ]
-        },
-        {
-          "meanings": [
-            "to mislead",
-            "to misguide"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
         }
       ]
     },
@@ -2302,7 +2113,10 @@
       "en": [
         {
           "meanings": [
-            "distribution (e.g. films, rice)"
+            "ration",
+            "issuance",
+            "distribution (e.g. films, rice)",
+            "rationing (e.g. food, gasoline)"
           ],
           "notes": [],
           "tags": [
@@ -2310,23 +2124,12 @@
             "Suru verb",
             "No-adjective"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "rationing (e.g. food, gasoline)"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "food ration"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "缶詰と毛布が難民たちに配給された",
+              "en": "Canned food and blankets were rationed out to the refugees."
+            }
+          ]
         }
       ]
     },
@@ -2511,15 +2314,20 @@
         {
           "meanings": [
             "improvement (e.g. in skill, ability)",
-            "advance",
-            "progress"
+            "progress",
+            "proficiency"
           ],
           "notes": [],
           "tags": [
             "Noun",
             "Suru verb"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "上達してきたね。よし！",
+              "en": "You are making progress. Good!"
+            }
+          ]
         }
       ]
     },
@@ -2544,7 +2352,12 @@
             "Na-adjective",
             "Noun"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "ただ文句を言う代わりに、たまには何か前向きなことを言ってくれますか",
+              "en": "Instead of just complaining, could you say something affirming now and then?"
+            }
+          ]
         }
       ]
     },
@@ -2609,27 +2422,6 @@
       ]
     },
     {
-      "common": false,
-      "jlpt": null,
-      "ja": {
-        "characters": "浮気女",
-        "readings": "うわきおんな"
-      },
-      "en": [
-        {
-          "meanings": [
-            "bimbo",
-            "slut"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": []
-        }
-      ]
-    },
-    {
       "common": true,
       "jlpt": "JLPT N2",
       "ja": {
@@ -2649,19 +2441,10 @@
           ],
           "sentences": [
             {
-              "ja": "眼窩とは目をいれている骨のいれもののことです",
-              "en": "The eye socket is the bone receptacle in which the eye fits."
+              "ja": "ああ、もう食べられない！持ち帰り用の入れ物が必要だわ！",
+              "en": "Oh, I can't eat anymore! I need a take-away container!"
             }
           ]
-        },
-        {
-          "meanings": [
-            "(euph. for) coffin",
-            "casket"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
         }
       ]
     },
@@ -2779,28 +2562,6 @@
       ]
     },
     {
-      "common": false,
-      "jlpt": null,
-      "ja": {
-        "characters": "ダメ人間",
-        "readings": "ダメにんげん"
-      },
-      "en": [
-        {
-          "meanings": [
-            "useless member of society",
-            "hopeless case",
-            "failure"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": []
-        }
-      ]
-    },
-    {
       "common": true,
       "jlpt": null,
       "ja": {
@@ -2821,7 +2582,12 @@
           "tags": [
             "I-adjective"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "誰をも褒め過ぎてはいけない。なぜなら、人は皆頼りないもの",
+              "en": "Praise none too much, for all are fickle."
+            }
+          ]
         }
       ]
     },
@@ -2887,7 +2653,7 @@
       "en": [
         {
           "meanings": [
-            "in either case (used specifically in the instance of two possible outcomes or situations)",
+            "in either case",
             "either way",
             "one way or another"
           ],
@@ -2895,7 +2661,10 @@
           "tags": [
             "Expression"
           ],
-          "sentences": []
+          "sentences": [{
+            "ja": "医者は私の心臓は健康だが、どちらにせよ、もう少し体重を落とすようにすべきだと言った",
+            "en": "The doctor told me that my heart was sound, but that I should try to lose a little more weight anyway."
+          }]
         }
       ]
     },
@@ -2909,27 +2678,19 @@
       "en": [
         {
           "meanings": [
-            "even so",
-            "either way",
+            "as expected",
             "nonetheless",
-            "in any event",
-            "all the same"
+            "even so",
+            "figures as much"
           ],
           "notes": [
             "Usually written using kana alone"
           ],
           "tags": [],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "as expected"
-          ],
-          "notes": [
-            "Usually written using kana alone"
-          ],
-          "tags": [],
-          "sentences": []
+          "sentences": [{
+            "ja": "やっぱりね",
+            "en": "I knew it."
+          }]
         }
       ]
     },
@@ -3015,7 +2776,7 @@
           ],
           "sentences": [
             {
-              "ja": "とけんかしたのか",
+              "ja": "ケンとけんかしたのか",
               "en": "Did you have a fight with Ken?"
             }
           ]
@@ -14159,10 +13920,10 @@
       "en": [
         {
           "meanings": [
-            "top",
+            "the top",
             "summit",
-            "apex",
-            "peak"
+            "peak",
+            "apex"
           ],
           "notes": [
             "Usually written using kana alone"
@@ -18615,14 +18376,16 @@
             "Noun",
             "Suru verb"
           ],
-          "sentences": [{
-            "ja": "伝言をお預かりしましょうか",
-            "en": "May I take a message?"
-          }]
+          "sentences": [
+            {
+              "ja": "伝言をお預かりしましょうか",
+              "en": "May I take a message?"
+            }
+          ]
         }
       ]
     },
-        {
+    {
       "common": true,
       "jlpt": null,
       "ja": {
@@ -18632,17 +18395,207 @@
       "en": [
         {
           "meanings": [
-          "to pass a message along",
-          "to send word",
-          "to bring word from"
+            "to pass a message along",
+            "to send word",
+            "to bring word from"
           ],
           "notes": [],
           "tags": [
             "Suru verb"
           ],
+          "sentences": [
+            {
+              "ja": "彼に伝言してもらえますか",
+              "en": "Can you pass on a message to him?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "余儀ない",
+        "readings": "よぎない"
+      },
+      "en": [
+        {
+          "meanings": [
+            "unavoidable",
+            "inevitable",
+            "beyond one’s control"
+          ],
+          "notes": [],
+          "tags": [
+            "I-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "何千人もの避難者が、暴動の発生により、退去を余儀なくされた",
+              "en": "Thousands of refugees have been displaced by the outbreak of violence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "淡々",
+        "readings": "たんたん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "indifferent",
+            "unconcerned",
+            "matter-of-fact",
+            "detached"
+          ],
+          "notes": [],
+          "tags": [
+            "Taru-adjective",
+            "Adverb taking the 'to' particle"
+          ],
+          "sentences": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "施錠",
+        "readings": "せじょう"
+      },
+      "en": [
+        {
+          "meanings": [
+            "lock-up",
+            "locking"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "最後にオフィスを出る者は、入り口のドアが施錠されていることを確認する義務がある",
+              "en": "The last person leaving the office is responsible for checking the entrance door to ensure that it is locked."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "瞑想",
+        "readings": "めいそう"
+      },
+      "en": [
+        {
+          "meanings": [
+            "meditation",
+            "contemplation"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "瞑想すると大抵人はとても落ち着きます",
+              "en": "Meditation usually makes a person very calm."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "中身",
+        "readings": "なかみ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "contents",
+            "filling",
+            "interior",
+            "substance"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "輸送中に箱が拉げて中身がとび出した",
+              "en": "The box was crushed during transport and the contents flew out."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "探検",
+        "readings": "たんけん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "exploration",
+            "expedition",
+            "voyage"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "北極探検には科学上の目的があった",
+              "en": "The expedition to the North Pole was for scientific purposes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "探検家",
+        "readings": "たんけんか"
+      },
+      "en": [
+        {
+          "meanings": [
+            "explorer"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
           "sentences": [{
-            "ja": "彼に伝言してもらえますか",
-          "en": "Can you pass on a message to him?"
+            "ja": "探検家は地球の遠く離れたへき地を旅する",
+            "en": "Explorers travel to remote corners of the earth."
           }]
         }
       ]
