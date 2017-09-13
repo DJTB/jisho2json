@@ -516,59 +516,6 @@
     },
     {
       "common": true,
-      "jlpt": null,
-      "ja": {
-        "characters": "蟹",
-        "readings": "かに"
-      },
-      "en": [
-        {
-          "meanings": [
-            "crab"
-          ],
-          "notes": [
-            "Usually written using kana alone"
-          ],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": [
-            {
-              "ja": "私はカニを大ごちそうだと思っている",
-              "en": "I regard crab as a great delicacy."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "common": false,
-      "jlpt": null,
-      "ja": {
-        "characters": "逃亡者",
-        "readings": "とうぼうしゃ"
-      },
-      "en": [
-        {
-          "meanings": [
-            "runaway",
-            "fugitive"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": [
-            {
-              "ja": "警察は逃亡者を追跡している",
-              "en": "The police are in pursuit of the runaway."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "common": true,
       "jlpt": "JLPT N2",
       "ja": {
         "characters": "繋がる",
@@ -2661,10 +2608,12 @@
           "tags": [
             "Expression"
           ],
-          "sentences": [{
-            "ja": "医者は私の心臓は健康だが、どちらにせよ、もう少し体重を落とすようにすべきだと言った",
-            "en": "The doctor told me that my heart was sound, but that I should try to lose a little more weight anyway."
-          }]
+          "sentences": [
+            {
+              "ja": "医者は私の心臓は健康だが、どちらにせよ、もう少し体重を落とすようにすべきだと言った",
+              "en": "The doctor told me that my heart was sound, but that I should try to lose a little more weight anyway."
+            }
+          ]
         }
       ]
     },
@@ -2687,10 +2636,12 @@
             "Usually written using kana alone"
           ],
           "tags": [],
-          "sentences": [{
-            "ja": "やっぱりね",
-            "en": "I knew it."
-          }]
+          "sentences": [
+            {
+              "ja": "やっぱりね",
+              "en": "I knew it."
+            }
+          ]
         }
       ]
     },
@@ -2905,7 +2856,7 @@
       "en": [
         {
           "meanings": [
-            "narrow-minded",
+            "small-minded",
             "petty"
           ],
           "notes": [],
@@ -2913,7 +2864,12 @@
             "Expression",
             "I-adjective"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "心が狭い人と対応方法6つ",
+              "en": "Six methods for responding to small-minded people."
+            }
+          ]
         }
       ]
     },
@@ -3021,15 +2977,12 @@
           "tags": [
             "Noun"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "motif"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "「やつが殺人犯に決まってる。動機があるしアリバイがない」「でも私はまだ納得がいかないな」",
+              "en": "“He must be the murderer. He has the motive and no alibi.” “I'm still not quite convinced.”"
+            }
+          ]
         }
       ]
     },
@@ -3044,19 +2997,8 @@
         {
           "meanings": [
             "seducer",
-            "smooth talker",
             "ladies’ man",
             "playboy",
-            "playgirl"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": []
-        },
-        {
-          "meanings": [
             "picking up women (on the street)"
           ],
           "notes": [
@@ -3067,7 +3009,12 @@
             "Noun",
             "Suru verb"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "誰かをナンパしよう。例文帳に追加",
+              "en": "Let's go pick up some chick."
+            }
+          ]
         }
       ]
     },
@@ -3142,30 +3089,16 @@
           "meanings": [
             "to persuade",
             "to coax",
-            "to solicit"
+            "to seduce",
+            "to make advances",
+            "to come on to",
+            "to hit on"
           ],
           "notes": [],
           "tags": [
             "Godan verb with ku ending",
             "Transitive verb"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "to seduce",
-            "to make advances",
-            "to make a play",
-            "to make a pass",
-            "to put the moves on",
-            "to come on to",
-            "to hit on",
-            "to court",
-            "to woo",
-            "to romance"
-          ],
-          "notes": [],
-          "tags": [],
           "sentences": [
             {
               "ja": "それわたしを口説いてるの",
@@ -3215,12 +3148,12 @@
       "en": [
         {
           "meanings": [
+            "no fair!",
             "sly",
             "cunning",
             "dishonest",
             "sneaky",
-            "crafty",
-            "unfair"
+            "crafty"
           ],
           "notes": [
             "Usually written using kana alone"
@@ -3228,7 +3161,12 @@
           "tags": [
             "I-adjective"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "何もずるいことをするな",
+              "en": "Don't try anything tricky."
+            }
+          ]
         }
       ]
     },
@@ -3257,19 +3195,22 @@
               "en": "The speeding car missed the child, who ran out into the road, by only a hairsbreadth."
             }
           ]
-        },
-        {
-          "meanings": [
-            "to appear (suddenly)"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
-        },
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N3",
+      "ja": {
+        "characters": "飛び出す",
+        "readings": "とびだす"
+      },
+      "en": [
         {
           "meanings": [
             "to protrude",
-            "to project"
+            "to project",
+            "to appear (suddenly)"
           ],
           "notes": [],
           "tags": [],
@@ -3279,14 +3220,6 @@
               "en": "The cartilage has slipped out here."
             }
           ]
-        },
-        {
-          "meanings": [
-            "to butt in"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
         }
       ]
     },
@@ -3447,7 +3380,9 @@
           "meanings": [
             "at one’s feet",
             "underfoot",
-            "one’s step (as in “watch your step”)"
+            "one’s step (as in “watch your step”)",
+            "gait",
+            "pace"
           ],
           "notes": [],
           "tags": [
@@ -3460,40 +3395,6 @@
               "en": "I drank too much and the ground seemed to spin under my feet."
             }
           ]
-        },
-        {
-          "meanings": [
-            "gait",
-            "pace",
-            "step"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "most recent",
-            "current"
-          ],
-          "notes": [],
-          "tags": [
-            "No-adjective"
-          ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "you",
-            "thou"
-          ],
-          "notes": [],
-          "tags": [
-            "Pronoun"
-          ],
-          "sentences": []
         }
       ]
     },
@@ -3542,69 +3443,12 @@
           "tags": [
             "Expression"
           ],
-          "sentences": []
-        }
-      ]
-    },
-    {
-      "common": true,
-      "jlpt": "JLPT N5",
-      "ja": {
-        "characters": "犬",
-        "readings": "いぬ"
-      },
-      "en": [
-        {
-          "meanings": [
-            "dog (Canis (lupus) familiaris)"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun"
-          ],
           "sentences": [
             {
-              "ja": "彼女は吠える犬を怖がる",
-              "en": "She is afraid of barking dogs."
+              "ja": "気が付くと、私はベッドに寝ていた",
+              "en": "The next thing I knew, I found myself lying in bed."
             }
           ]
-        },
-        {
-          "meanings": [
-            "snoop (i.e. a detective, a spy, etc.)"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": [
-            {
-              "ja": "気をつけて警察の犬がかぎ回ってる",
-              "en": "Watch out! A police spy is snooping around."
-            }
-          ]
-        },
-        {
-          "meanings": [
-            "loser",
-            "asshole"
-          ],
-          "notes": [
-            "Derogatory"
-          ],
-          "tags": [],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "counterfeit",
-            "inferior",
-            "useless",
-            "wasteful"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun - used as a prefix"
-          ],
-          "sentences": []
         }
       ]
     },
@@ -3624,7 +3468,12 @@
           "tags": [
             "Expression"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "水でけっこうです",
+              "en": "I’m fine with just water"
+            }
+          ]
         }
       ]
     },
@@ -3638,8 +3487,7 @@
       "en": [
         {
           "meanings": [
-            "zabuton (flat floor cushion used when sitting or kneeling",
-            "usu. rectangular)"
+            "zabuton (flat floor cushion used when sitting or kneeling (usu. rectangular)"
           ],
           "notes": [],
           "tags": [
@@ -3753,7 +3601,12 @@
           "tags": [
             "Noun"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "レンジを消しなさい",
+              "en": "Turn off the stove."
+            }
+          ]
         }
       ]
     },
@@ -3795,7 +3648,8 @@
           "meanings": [
             "electric line",
             "electric cable",
-            "power cable"
+            "power cable",
+            "telephone line"
           ],
           "notes": [],
           "tags": [
@@ -3807,15 +3661,6 @@
               "en": "When a coil is moved near to a wire with current flowing in it current flows in the coil as well."
             }
           ]
-        },
-        {
-          "meanings": [
-            "telephone line",
-            "telegraph wire"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": []
         }
       ]
     },
@@ -3864,7 +3709,12 @@
           "tags": [
             "Noun"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "今日はどうも学校に行く気になれなかったので、サボりました",
+              "en": "I just didn't want to go to school today, so I skipped."
+            }
+          ]
         }
       ]
     },
@@ -4000,7 +3850,12 @@
           "tags": [
             "Noun"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "彼女は事故の補償金として200万ドルを受け取った",
+              "en": "She received $2 million in compensation for the accident."
+            }
+          ]
         }
       ]
     },
@@ -4016,7 +3871,11 @@
           "meanings": [
             "heart going pit-a-pat",
             "falling rapidly in big drops",
-            "fluttering down"
+            "fluttering down",
+            "on tenterhooks",
+            "in suspense",
+            "exciting",
+            "thrilling"
           ],
           "notes": [
             "Onomatopoeic or mimetic word"
@@ -4026,29 +3885,6 @@
             "Suru verb",
             "Adverb taking the ’to’ particle"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "keeping on tenterhooks",
-            "suspense"
-          ],
-          "notes": [],
-          "tags": [],
-          "sentences": [
-            {
-              "ja": "私ははらはらしながら結果を待っていました",
-              "en": "I have been waiting for the results with anxiety."
-            }
-          ]
-        },
-        {
-          "meanings": [
-            "exciting",
-            "thrilling"
-          ],
-          "notes": [],
-          "tags": [],
           "sentences": [
             {
               "ja": "いかだでその川を下ったときははらはらした",
@@ -4098,7 +3934,10 @@
           "meanings": [
             "dangling heavily",
             "swaying to and fro",
-            "swinging"
+            "meandering",
+            "hang about",
+            "idly",
+            "aimlessly"
           ],
           "notes": [
             "Onomatopoeic or mimetic word"
@@ -4109,47 +3948,12 @@
             "Adverb taking the ’to’ particle",
             "Suru verb"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "strolling",
-            "rambling",
-            "roaming",
-            "wandering"
-          ],
-          "notes": [
-            "Onomatopoeic or mimetic word"
-          ],
-          "tags": [
-            "Adverb",
-            "Adverb taking the ’to’ particle",
-            "Suru verb"
-          ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "idly",
-            "lazily",
-            "leisurely",
-            "aimlessly"
-          ],
-          "notes": [
-            "Onomatopoeic or mimetic word"
-          ],
-          "tags": [],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "persisting (of an illness)"
-          ],
-          "notes": [
-            "Onomatopoeic or mimetic word"
-          ],
-          "tags": [],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "ブラブラ歩いているうちに浜辺へ出た",
+              "en": "Meandering steps took us to the beach."
+            }
+          ]
         }
       ]
     },
@@ -4163,16 +3967,19 @@
       "en": [
         {
           "meanings": [
-            "for your reference",
-            "FYR",
-            "for your information",
-            "FYI"
+            "FYI",
+            "for your reference"
           ],
           "notes": [],
           "tags": [
             "Expression"
           ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "ご参考までに支払スケジュールを同封致しました",
+              "en": "Enclosed is a payment schedule for your convenience."
+            }
+          ]
         }
       ]
     },
@@ -4467,24 +4274,20 @@
       "en": [
         {
           "meanings": [
-            "wages"
+            "wages",
+            "cash payment of rent"
           ],
           "notes": [],
           "tags": [
             "Noun",
             "No-adjective"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "cash payment of rent"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun"
-          ],
-          "sentences": []
+          "sentences": [
+            {
+              "ja": "労働者たちは賃金アップを要求して団結した",
+              "en": "The workers united to demand higher wages."
+            }
+          ]
         }
       ]
     },
@@ -4668,16 +4471,6 @@
               "en": "Women’s rights groups are going after sexual harassment."
             }
           ]
-        },
-        {
-          "meanings": [
-            "Dantai"
-          ],
-          "notes": [],
-          "tags": [
-            "Place"
-          ],
-          "sentences": []
         }
       ]
     },
@@ -17690,21 +17483,14 @@
             "to seize",
             "to commandeer",
             "to occupy",
-            "to usurp"
+            "to usurp",
+            "to hijack (a vehicle)"
           ],
           "notes": [],
           "tags": [
             "Godan verb with ru ending",
             "Transitive verb"
           ],
-          "sentences": []
-        },
-        {
-          "meanings": [
-            "to hijack (a vehicle)"
-          ],
-          "notes": [],
-          "tags": [],
           "sentences": [
             {
               "ja": "その小さな会社は企業による乗っ取りと戦った",
@@ -18174,27 +17960,6 @@
       "common": true,
       "jlpt": null,
       "ja": {
-        "characters": "設定可能",
-        "readings": "せっていかのう"
-      },
-      "en": [
-        {
-          "meanings": [
-            "configurable"
-          ],
-          "notes": [],
-          "tags": [
-            "Noun",
-            "Na-adjective"
-          ],
-          "sentences": []
-        }
-      ]
-    },
-    {
-      "common": true,
-      "jlpt": null,
-      "ja": {
         "characters": "蝿",
         "readings": "はえ"
       },
@@ -18593,9 +18358,828 @@
           "tags": [
             "Noun"
           ],
+          "sentences": [
+            {
+              "ja": "探検家は地球の遠く離れたへき地を旅する",
+              "en": "Explorers travel to remote corners of the earth."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "無能",
+        "readings": "むのう"
+      },
+      "en": [
+        {
+          "meanings": [
+            "talentless",
+            "incompetence",
+            "inept"
+          ],
+          "notes": [],
+          "tags": [
+            "Na-adjective",
+            "Noun",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "僕の上司が、僕が無能みたいなことを言ったんだ！僕は無能なんかじゃないぞ！聞いてんの…?起きろよ！",
+              "en": "My boss said something like I'm useless! I'm not useless! Hey, are you listening? Wake up! "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "禁錮",
+        "readings": "きんこ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "imprisonment",
+            "confinement"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "犯人は禁錮6年を宣告された",
+              "en": "The criminal has been sentenced to six years imprisonment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "宣告",
+        "readings": "せんこく"
+      },
+      "en": [
+        {
+          "meanings": [
+            "sentence",
+            "verdict",
+            "pronouncement"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "実際、彼女は救急隊員に死を宣告されていました",
+              "en": "In fact, she had already been pronounced dead by ambulance workers."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "換算",
+        "readings": "かんさん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "conversion (e.g. yen to dollars)",
+            "change",
+            "exchange"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "どうしてアメリカはインチやフィートを使っているんだろう。いちいち換算するのが面倒だなあ",
+              "en": "Why do they use inches and feet in America? It's such a bother converting everything fully!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "変形",
+        "readings": "へんけい"
+      },
+      "en": [
+        {
+          "meanings": [
+            "transformation",
+            "deformation",
+            "metamorphosis"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "脚の骨折を治療しなかったので、その子どもの脚は一生変形したままだった",
+              "en": "An untreated leg fracture left the child with a lifelong deformity."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "騙す",
+        "readings": "だます"
+      },
+      "en": [
+        {
+          "meanings": [
+            "to trick",
+            "to cheat",
+            "to deceive"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Godan verb with su ending",
+            "Transitive verb"
+          ],
+          "sentences": [
+            {
+              "ja": "あいつら、いつも旅行者をだますんだ",
+              "en": "They always cheat tourists."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N3",
+      "ja": {
+        "characters": "適切",
+        "readings": "てきせつ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "proper",
+            "appropriate",
+            "applicable",
+            "well-chosen",
+            "adequate"
+          ],
+          "notes": [],
+          "tags": [
+            "Na-adjective",
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "適切な衣服を身に着けてください",
+              "en": "Wear appropriate clothing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "優越感",
+        "readings": "ゆうえつかん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "superiority complex",
+            "sense of superiority"
+          ],
+          "notes": [
+            "Antonym of 劣等感"
+          ],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "私は、優越感を持って話さないように心掛けています",
+              "en": "I try to avoid speaking with a sense of superiority."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "威力",
+        "readings": "いりょく"
+      },
+      "en": [
+        {
+          "meanings": [
+            "power",
+            "might",
+            "authority",
+            "influence"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "そのコンピューター・ウイルスの威力を知った",
+              "en": "I found out how effective the computer virus was."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "同士",
+        "readings": "どうし"
+      },
+      "en": [
+        {
+          "meanings": [
+            "fellow",
+            "mutual",
+            "companion",
+            "comrade"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Noun - used as a suffix"
+          ],
+          "sentences": [
+            {
+              "ja": "仲間同士のプレッシャーを感じて、彼は麻薬をやるのを断れなかった",
+              "en": "He felt peer pressure and couldn't refuse to take the dope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "奮闘",
+        "readings": "ふんとう"
+      },
+      "en": [
+        {
+          "meanings": [
+            "hard struggle",
+            "strenuous effort"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "僕はいまだに何とか禁煙しようと奮闘している",
+              "en": "I'm still wrestling with my resolution to stop smoking."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N3",
+      "ja": {
+        "characters": "諦める",
+        "readings": "あきらめる"
+      },
+      "en": [
+        {
+          "meanings": [
+            "to give up",
+            "to abandon (hope, plans)",
+            "to resign oneself (to)"
+          ],
+          "notes": [],
+          "tags": [
+            "Ichidan verb",
+            "Transitive verb"
+          ],
+          "sentences": [
+            {
+              "ja": "諦めるな",
+              "en": "Don't give up."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "緊急事態",
+        "readings": "きんきゅうじたい"
+      },
+      "en": [
+        {
+          "meanings": [
+            "state of emergency"
+          ],
+          "notes": [
+            "Yojijukugo (four character compound)"
+          ],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "緊急事態のために、ルーシーにテレホンカードあげたの",
+              "en": "I gave Lucy a calling card in case there's an emergency"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "ぶら下がる",
+        "readings": "ぶらさがる"
+      },
+      "en": [
+        {
+          "meanings": [
+            "to hang from",
+            "to dangle",
+            "to swing"
+          ],
+          "notes": [],
+          "tags": [
+            "Godan verb with ru ending",
+            "intransitive verb"
+          ],
+          "sentences": [
+            {
+              "ja": "テーブルの上にはランプがぶら下がっていた",
+              "en": "There was a lamp hanging above the table."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "警備",
+        "readings": "けいび"
+      },
+      "en": [
+        {
+          "meanings": [
+            "defense",
+            "security",
+            "policing",
+            "guard"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "警備は極めて厳重だった",
+              "en": "Security was extremely tight."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "守衛",
+        "readings": "しゅえい"
+      },
+      "en": [
+        {
+          "meanings": [
+            "security guard",
+            "doorkeeper"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "守衛を呼んで！",
+              "en": "Call building security!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "警備員",
+        "readings": "けいびいん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "guard",
+            "security (officer)",
+            "guardsman"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "警備員の一人が、常時ビルの前に座っていた",
+              "en": "One of the security guards always sat in front of the building."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "細やか",
+        "readings": "ささやか"
+      },
+      "en": [
+        {
+          "meanings": [
+            "meagre",
+            "modest",
+            "simple",
+            "in a small way"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Na-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "このささやかな楽しみを私から奪おうというのか",
+              "en": "Are you going to deprive me of this little simple pleasure?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "黴",
+        "readings": "かび"
+      },
+      "en": [
+        {
+          "meanings": [
+            "mold",
+            "mould",
+            "mildew"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "かびの生えた食べ物を捨てた",
+              "en": "I threw away some moldy food."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "光沢",
+        "readings": "こうたく"
+      },
+      "en": [
+        {
+          "meanings": [
+            "lustre",
+            "shine",
+            "polish",
+            "glossy finish (photographs)"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "この指輪は光沢をうしなった",
+              "en": "This ring lost its luster."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "意気地なし",
+        "readings": "いくじなし"
+      },
+      "en": [
+        {
+          "meanings": [
+            "coward",
+            "wuss",
+            "timid creature"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "なんて意気地なしなの？嫌なら嫌ってはっきり言えばいいのに",
+              "en": "He's such a coward! If he doesn't like it, he should just say so."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "焼きもち",
+        "readings": "やきもち"
+      },
+      "en": [
+        {
+          "meanings": [
+            "jealousy"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "焼もちは友情の敵だ",
+              "en": "Jealousy is an enemy to friendship."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "出現",
+        "readings": "しゅつげん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "appearance",
+            "arrival",
+            "make one’s appearance"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "突然の熊の出現に子供たちは死んだふりをした",
+              "en": "At the sudden appearance of a bear, the kids made believe they were dead."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "顎",
+        "readings": "あご"
+      },
+      "en": [
+        {
+          "meanings": [
+            "chin",
+            "jaw"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Noun",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "彼は、顎に目立つ傷がある",
+              "en": "He has a noticeable scar on his chin."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "庇う",
+        "readings": "かばう"
+      },
+      "en": [
+        {
+          "meanings": [
+            "to protect someone",
+            "to take under one’s wing",
+            "to plead for",
+            "to stick up for",
+            "to cover up for someone"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Godan verb with u ending",
+            "Transitive verb"
+          ],
+          "sentences": [
+            {
+              "ja": "「かばうなよ、あんなやつ」「構わないわ。私は間違ってるかもしれない。でも、彼の味方をするのが悪いというのなら、私は悪者でもいいわ」",
+              "en": "“Why are you defending a guy like that?” “I don’t care. Maybe I’m mistaken, but if standing up for him is wrong, I don’t want to be right.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": null,
+      "ja": {
+        "characters": "悪役",
+        "readings": "あくやく"
+      },
+      "en": [
+        {
+          "meanings": [
+            "villain",
+            "baddie",
+            "the villain’s part"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "No-adjective"
+          ],
+          "sentences": [
+            {
+              "ja": "この物語には悪役がいない",
+              "en": "There are no villains in this story."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N2",
+      "ja": {
+        "characters": "接近",
+        "readings": "せっきん"
+      },
+      "en": [
+        {
+          "meanings": [
+            "getting closer",
+            "drawing nearer",
+            "approaching",
+            "being near/similar (age, skill, etc.)",
+            "becoming close (friendly, intimate)"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
+          "sentences": [
+            {
+              "ja": "嵐が接近していました",
+              "en": "The storm was getting closer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": false,
+      "jlpt": null,
+      "ja": {
+        "characters": "蜥蜴",
+        "readings": "とかげ"
+      },
+      "en": [
+        {
+          "meanings": [
+            "lizard"
+          ],
+          "notes": [
+            "Usually written using kana alone"
+          ],
+          "tags": [
+            "Noun"
+          ],
+          "sentences": [
+            {
+              "ja": "あの小屋にはトカゲや虫がうようよしている",
+              "en": "That hut is crawling with lizards and insects."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "common": true,
+      "jlpt": "JLPT N1",
+      "ja": {
+        "characters": "小売",
+        "readings": "こうり"
+      },
+      "en": [
+        {
+          "meanings": [
+            "retail"
+          ],
+          "notes": [],
+          "tags": [
+            "Noun",
+            "Suru verb"
+          ],
           "sentences": [{
-            "ja": "探検家は地球の遠く離れたへき地を旅する",
-            "en": "Explorers travel to remote corners of the earth."
+            "ja": "小売商人は卸しで仕入れて小売りで売る",
+            "en": "A retail merchant buys wholesale and sells retail."
           }]
         }
       ]
