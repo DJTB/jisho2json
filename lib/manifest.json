@@ -1,7 +1,7 @@
 {
   "name": "Jisho 2 JSON",
   "description": "This extension will copy a clicked Jisho entry to the clipboard as stringified JSON",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "manifest_version": 2,
   "background": {
     "persistent": false,
@@ -13,7 +13,7 @@
     "clipboardWrite"
   ],
   "content_scripts": [{
-    "matches": ["http://jisho.org/*/*"],
+    "matches": ["*://jisho.org/*/*"],
     "js": [
       "jquery-3.2.0.min.js",
       "smartquotes.js",
